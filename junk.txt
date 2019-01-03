@@ -1,0 +1,9 @@
+
+            <div>
+                <span class="question">What can be animated?</span>Generally, you should only animate properties
+                that have <strong>numeric values</strong> to get smooth transitions. <a href="https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/"
+                    target="_blank">Here</a> is an article on performance-differences between animated properties.<br>
+
+                <span class="question">When should animations be used?</span><a href="https://codepen.io/devtips/pen/AXxGwO/"
+                    target="_blank">Here</a>
+            </div>

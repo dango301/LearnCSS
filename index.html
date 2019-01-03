@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Learn CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif|Marck+Script|Unlock|Merriweather|Cormorant+Infant:600|Iceberg|Monofett|Modern+Antiqua"
+        rel="stylesheet">
+    <link rel="icon" href="Assets/css3_logo.png">
+</head>
+
+<body>
+
+    <header>
+
+        <div>
+            <h1 class="it">Learn Styling Websites with CSS</h1>
+            <p>CSS stands for Cascade Styling Sheets</p>
+            <a href="https://www.sololearn.com/Play/CSS" target="_blank">--> SoloLearn CSS-Course</a><br><br>
+            <a href="https://www.sololearn.com/Play/JavaScript/" target="_blank">--> SoloLearn JS-Course</a>
+        </div>
+
+        <div id="container">
+
+            <table>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>made</th>
+                </tr>
+                <tr>
+                    <th>by</th>
+                </tr>
+                <tr>
+                    <th>Dennis Paust</th>
+                </tr>
+                <tr>
+                    <th></th>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>suck</th>
+                </tr>
+                <tr>
+                    <th>a</th>
+                </tr>
+                <tr>
+                    <th>dick</th>
+                </tr>
+                <tr>
+                    <th></th>
+                </tr>
+            </table>
+
+        </div>
+
+    </header> <br> <br><br><br>
+
+
+    <aside id="tasks">
+        <h2>To-Do:</h2>
+
+        <ul>
+            <li>White-space <a href="#red">here</a></li>
+            <li>Flexbox <a href="#grid2">here</a></li>
+            <li>Imprint and Website description <a href="#">here</a></li>
+        </ul>
+        <hr>
+        <ul>
+            <li>Improve Layout</li>
+            <li>Navigation-bar with exact scroll jumping</li>
+            <li>make website adjustable to all screen sizes</li>
+        </ul>
+    </aside> <br> <br> <br>
+
+
+    <aside id="totop">
+        <a href="#">Top</a>
+    </aside>
+
+
+    <article id="red">
+        <h2>Modifying Text</h2>
+
+        <div class="grid">
+
+            <section>
+                <h3>Vertical Align</h3>
+                <p>This is a <span class="sub">sub line text</span> example.</p>
+                <p> This is a <span class="super">super line text</span> example.</p>
+                <p> This is a <span class="pixel1">pixel</span> example.</p>
+                <p> Here's another <span class="pixel2">pixel</span> example.</p>
+            </section>
+
+            <section>
+                <h3>Text Decoration</h3>
+                <p class="inherit">This text inherits the decoration of the parent.</p>
+                <p class="underline">This is underlined text.</p>
+                <p class="overline">This is overlined text.</p>
+                <p class="line-through">This is lined-through text.</p>
+            </section>
+
+            <section>
+                <h3>Text Indent</h3>
+                <p class="indent">This text will be indeted. Notice that only the first line is affected by the
+                    text-indent property.</p>
+            </section>
+
+            <section class="shadow">
+                <h3>Text Shadow</h3>
+                <p class="shadow2">The quick brown fox jumps over the lazy dog</p>
+                <p class="shadow3">The quick brown fox jumps over the lazy dog</p>
+                <p class="shadow1">The quick brown fox jumps over the lazy dog</p>
+                <p class="shadow4">This Text has two shadows.</p>
+            </section>
+
+            <section>
+                <h3>Text Transform</h3>
+                <p class="capitalize">This transforms only the first character in each word to uppercase</p>
+                <p class="lowercase">This transforms ALL characters to lowercase.</p>
+                <p class="uppercase">This transforms all characters to uppercase.</p>
+            </section>
+
+            <section>
+                <h3>Letter-Spacing</h3>
+                <p class="letterspace1">This paragraph is letter-spaced at 4px.</p>
+                <p class="letterspace2">This paragraph is letter-spaced at -1.5px.</p>
+            </section>
+
+            <section>
+                <h3>Word-Spacing</h3>
+                <p class="wordspace1">This paragraph is word-spaced at 16px.</p>
+                <p class="wordspace2">This paragraph is word-spaced at -8px.</p>
+            </section>
+
+            <section>
+                <h3>Word-Wrap</h3>
+                <div id="wordwrap">
+                    <p>Normal: Antidisestablishmentarianism </p>
+                    <p>With Word-Wrap: Antidisestablishmentarianism </p>
+                </div>
+            </section>
+
+        </div>
+
+    </article> <br> <br> <br>
+
+
+    <article id="purple">
+        <h2>More CSS Properties</h2>
+
+        <section>
+            <h3>The Box Model</h3>
+            <div class="grid1">
+                <img src="Assets/BoxModel.png">
+                <div>
+                    <img src="Assets/BoxCalc.png">
+                    <p>Here's how the Box's dimensions are calculated:</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid2">
+
+            <section id="borders">
+                <h3>Borders</h3>
+                <p class="dotted">This is a dotted border.</p>
+                <p class="dashed">This is a dashed border.</p>
+                <p class="double">This is a double border.</p>
+                <p class="groove">This is a grooved border.</p>
+                <p class="ridge">This is a ridged border.</p>
+                <p class="inset">This is an inset border.</p>
+                <p class="outset">This is an outset border.</p>
+            </section>
+
+            <section>
+                <h3>Styling Lists</h3>
+
+                <ul id="listexample">
+                    <li id="disc">Disc (default) style</li>
+                    <li id="square">Square style</li>
+                    <li id="circle"> Circle style</li>
+                    <li id="lowergreek"> Lower-Greek style</li>
+                    <li id="none">Style-Type set to none</li>
+                    <li id="lowerroman"> Lower-Roman style</li>
+                    <li id="upperroman"> Upper-Roman style</li>
+                    <li id="decimalzero"> Deciamal-Zero style</li>
+                    <li id="decimal"> Deciamal style</li>
+                    <li id="loweralpha"> Lower-Alpha style</li>
+                    <li id="upperalpha"> Upper-Alpha style</li>
+                    <li id="customimg"> Custom Image style</li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h3>Styling Links</h3>
+                <p>Clicking on the links will take you to a <a class="link1" href="about:blank" target="_blank">Blank
+                        Page</a>.</p>
+                <p>
+                    Cupidatat veniam in elit anim <a class="link3" href="about:blank">dolore tempor</a> sit enim sint
+                    eu cillum ex. Eu ad aute dolor aliquip
+                    dolore nisi ad. Adipisicing <a class="link2" href="about:blank">Another Link</a> minim non est sunt
+                    reprehenderit eu pariatur cillum irure Lorem magna cillum eu.
+                </p>
+            </section>
+
+            <section id="mouseover">
+                <h3>Mouse Cursors</h3>
+
+                <img src="Assets/curors-sheet.png">
+                <p>Don't even try to hover over this text!</p>
+            </section>
+
+        </div> <br><br>
+
+        <section>
+            <h3>Background Images</h3>
+
+            <div id="bibanner">
+                <div>
+                    <p>
+                        Background images have many more properties that can be customized. The most important ones
+                        will be
+                        showcased in the rest of this section. Let's start:
+                    </p>
+
+                    <p>
+                        The standard value for background images' <b>image-attach</b> property is <b>scroll</b>.
+                        Changing the value to <strong>fixed</strong> instead of scroll, will lock the image to it's
+                        position instead of it moving with the page.<br>That's why the background-image of this section
+                        has a parallax effect
+                        when the page is scrolled.
+                    </p>
+                </div>
+            </div> <br>
+
+            <div class="grid3" id="n1">
+
+                <div id="qline">
+                    <h4>Background-Repeat</h4>
+                    <p>The standard value is <b>repeat</b>. Other possible values are <b>repeat-x, repeat-y
+                            and no-repeat</b>.<br>The following boxes show examples for all values in the listed
+                        order.
+                    </p>
+                </div>
+
+                <div class="bi"></div>
+                <div class="bi" id="bi2"></div>
+                <div class="bi" id="bi3"></div>
+                <div class="bi" id="bi4"></div>
+            </div>
+
+            <div class="grid3" id="n2">
+
+                <div id="qline">
+                    <h4>Background-Size</h4>
+                    <p>The standard value is <b>auto</b>. Other possible values are <b>cutom values, contain and cover</b>.<br>The
+                        following boxes show examples for all values in the listed order. Hover over marked images for
+                        more details.
+                    </p>
+                </div>
+
+                <div class="bi" id="bi1">
+                    <div class="infoIcon"></div>
+                    <div class="info">
+                        <p>The image will be displayed in its original size, if this property is set to auto or not
+                            specified.</p>
+                    </div>
+                </div>
+                <div class="bi" id="bi2">
+                    <div class="infoIcon"></div>
+                    <div class="info">
+                        <p>Use the slider to change the background-image's size:<br><br>
+                            <input type="range" step="1" min="25" max="125" value="75" id="myslider1" oninput="changeSize(this.value)">
+                            Current Value: <span id="cValue1"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bi" id="bi3">
+                    <div class="infoIcon"></div>
+                    <div class="info">
+                        <p>The image will grow or shrink proportionally, but both width and height will not exceed the
+                            container's dimensions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bi" id="bi4">
+                    <div class="infoIcon"></div>
+                    <div class="info">
+                        <p>The image is scaled to fit the entire container; however, if that has a different aspect
+                            ratio, the image will be cropped.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid3" id="n3">
+
+                <div id="qline">
+                    <h4>Multiple Background Images</h4>
+                    <p>Multiple background images are specified using a comma-separated list of values for the
+                        background-image property. The first image will appear on the top, the last on the bottom.
+                    </p>
+                </div>
+
+                <div class="bi2" id="bi1">
+                    <div class="infoIcon"></div>
+                    <div class="info">
+                        <p>Make sure to use other properties with comma-separated values aswell, in order to achieve
+                            the desired look.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid3" id="n4">
+
+                <div id="qline">
+                    <h4>Background-Clip</h4>
+                    <p>The standard value is <b>border-box</b>. Other possible values are <b>padding-box and
+                            content-box</b>.<br>The following boxes show examples for all values in the listed
+                        order.
+                    </p>
+                </div>
+
+                <div class="bi2" id="bi1">
+                    <div class="infoIcon"></div>
+                    <div class="info">
+                        <p>The background is painted to the outside edge of the border, if this property is set to
+                            border-box or not specified.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bi2" id="bi2">
+                    <div class="infoIcon"></div>
+                    <div class="info">
+                        <p>The background is painted to the outside edge of the padding.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bi2" id="bi3">
+                    <div class="infoIcon"></div>
+                    <div class="info">
+                        <p>The background is painted within the content box.<br>Change the content box's size by
+                            changing
+                            the padding:
+                            <input type="range" min="0" max="50" value="25" oninput="changePadding(this.value)" id="myslider2">
+                            Current Padding: <span id="cValue2"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </article> <br> <br> <br>
+
+
+    <article id="blue">
+        <h2>Positioning and Layout</h2>
+
+        <div id="grid1">
+
+            <section>
+                <h3>Positioning</h3>
+
+                <p style="line-height: 1.5em">HTML elements are positioned <b>static by default</b>. A static
+                    positioned
+                    element is always positioned
+                    according to the <b>normal flow of the page</b>.<br>
+                    <b>Fixed</b> positioned elements are fixed "on the
+                    screen" and therefore <b>scroll with the page</b> (eg. nav-bars or pop-ups).<br>
+                    A <b>relative</b> positioned element is positioned <b>relative to its normal position</b>. The
+                    properties top, right, bottom, and left can be used to specify how the box will be shifted,
+                    although a
+                    blank space will be left at it's normal position. <br>
+                    An absolute positioned element is positioned <b>relative to the first parent</b> that has a
+                    position other than static and is removed out of the normal flow.
+                </p>
+            </section>
+
+            <section>
+                <h3>Visibilty</h3>
+
+                <p id="invisible">Hover to make the word <a class="nl b it" href="https://www.youtube.com/watch?v=oOrWDt1o1gk"
+                        target="_blank">IRIDOCYCLITIS</a> visible. The space for invisible elements is always
+                    preserved.
+                </p>
+
+            </section>
+
+            <section>
+                <h3>Overflow</h3>
+                <div id="overflow">
+
+                    <p>The overflow property is set to <b>auto</b>. Customizing the scrollbars is always possible.<br><br>This
+                        is the most recommended setting.</p>
+
+                    <p>The overflow property is set to <b>scroll</b>. Customizing the scrollbars is always possible.<br><br>This
+                        is a placeholder text.</p>
+
+                    <div id="child3">
+                        <div id="text">The overflow property is set to <b>hidden</b>. Hover to see a practical
+                            application. This text dosn't fit in the box because it is too long.</div>
+                        <div id="overlay">This is very handy for hiding slide-up elements.</div>
+                    </div>
+
+                    <p>The overflow property is set to it's <b>standard value visible</b>. Overflowing parts will not
+                        be respected in the document flow.
+                    </p>
+
+                </div>
+            </section>
+
+
+            <section>
+                <h3>Z-Index</h3>
+
+                <p style="width: auto">Elements with a higher z-value will be drawn on top of the ones with lower
+                    z-values, regardless of the order in the HTML.<br>The z-index works <b>only on positioned
+                        elements</b>
+                    (position: absolute, relative, or fixed).</p>
+            </section>
+
+        </div> <br><br>
+
+
+        <section>
+            <h3>Floating</h3>
+
+
+            <div id="grid2">
+
+                <div class="float">
+                    <span id="img1"></span>
+                    <p>
+                        With CSS float, an element can be pushed to the left or right, allowing other elements to wrap
+                        around it. Elements are floated <b>horizontally</b>, meaning that an element can
+                        only be floated left or right, not up or down. It is highly recommended to add a margin to
+                        images so that text does not get too close to the image.<br><br><span id="img2"></span>
+                        Compare the images' positions in the HTML and how the text wraps around the images. Hover over
+                        them to see, how the text wraps around their borders.
+                    </p>
+                </div>
+
+                <div class="float" id="two">
+
+                    <span id="img1"></span>
+                    <span id="img3"></span>
+                    <p>This paragraph wraps around floating elements normally. However, for more specific wrapping
+                        settings...</p>
+                    <p>Make use of the clear property, that prevents elements to wrap around other floating elements.
+                        This paragraph for instance, is set to <b>clear</b> on the right side only. That's why it's
+                        pushed under the right image, but still floats around the left one.
+                    </p>
+                </div>
+
+                <div class="float" id="three">
+
+                    <span id="img3"></span>
+                    <p>Placing several floating elements after another, will make them float next to each other if
+                        there's enough room.<br><br> That's why this entire paragraph dosn't wrap around the image.
+                    </p>
+
+                </div>
+            </div>
+
+            </div>
+        </section> <br><br>
+
+
+        <section id="flex">
+            <h3>FlexBox</h3>
+
+            <p style="width: 65vw">Lorem labore ut laborum incididunt ut ad consectetur dolor ea dolore duis dolore
+                sunt excepteur. Veniam eiusmod velit amet adipisicing labore sit adipisicing eu. Cupidatat qui dolore
+                ullamco adipisicing occaecat qui ullamco minim proident. Sunt officia labore nisi ex. Eu duis sint sint
+                sint consectetur. Labore eiusmod <a href="https://www.youtube.com/watch?v=G7EIAgfkhmg" target="_blank">yeeeeeeeeeeet</a>
+                esse ea esse incididunt nisi ea ad excepteur dolore.<br>Ea officia
+                nostrud voluptate ad reprehenderit ullamco non exercitation eu cupidatat quis ea. Sunt voluptate non
+                consequat in aliqua magna sint cillum anim adipisicing sint proident labore. Amet et culpa
+                reprehenderit cupidatat anim magna. Excepteur deserunt dolore commodo dolore do.</p>
+
+        </section>
+
+
+
+    </article> <br> <br> <br>
+
+
+    <article id="yellow">
+        <h2>CSS3 and even more CSS Properties</h2>
+
+        <section>
+            <h3>First of all...</h3>
+
+            <div id="gridA">
+
+                <div class="rc roundcorner1">
+                    <p>Rounded Corners!</p>
+                </div>
+                <div class="rc roundcorner2">
+                    <p>And they're<br>customizable too!</p>
+                </div>
+                <div id="rc1" class="rc roundcorner3">
+                    <p>Corners can be <span class="it">so</span> round, you get a circle:</p>
+                </div>
+                <div class="rc roundcorner4">
+                    <p>wow.</p>
+                </div>
+
+            </div>
+        </section> <br><br>
+
+        <section id="gridB">
+
+            <div>
+                <h3>Pseudo Classes</h3>
+
+                <p>Pseudo-Classes let you <span class="b">access elements in the document tree</span> more
+                    easily. They always start with a colon(:).<br>Here are some examples using the
+                </p>
+
+                <div id="grid1">
+
+                    <div>
+                        <h4><span class="b it">:first-child <span class="nl">and</span> :last-child</span> classes</h4>
+                        <div id="parent1">
+                            <p>First paragraph</p>
+                            <p>Second paragraph</p>
+                            <p>Third paragraph</p>
+                            <p>Fourth paragraph</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4><span class="b it">:nth-child()</span> class</h4>
+                        <div id="parent2">
+                            <p>First paragraph</p>
+                            <p>Second paragraph</p>
+                            <p>Third paragraph</p>
+                            <p>Fourth paragraph</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4><span class="it b">:hover</span> class</h4>
+                        <div id="parent3">
+                            <p>Hover me!</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div>
+                <h3>Pseudo Elements</h3>
+
+                <p>Pseudo-Elements are used to select specific parts of an element. They always start with a double
+                    colon(::).<br>Here are some examples using the</p>
+
+                <div id="grid2">
+
+                    <div>
+                        <h4><span class="b it">::first-line</span> pseudo-class</h4>
+                        <div id="parent1">
+                            <p>Only the first line will be red. Laborum nisi duis dolore ipsum culpa tempor
+                                laborum ad ullamco.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4><span class="b it">::first-letter</span> class</h4>
+                        <div id="parent2">
+                            <p>The first letter will be styled only.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4><span class="b it">::selection</span> class</h4>
+
+                        <div id="parent3">
+                            <p>
+                                [<span class="it"> Select me </span>]<br>
+                                Selection works with the <span id="shadow">color, background </span>and
+                                <span id="shadow"> text-shadow properties only</span>.
+                            </p>
+                            <div id="moreselection">
+                                <a href="https://css-tricks.com/almanac/selectors/s/selection/" target="_blank">See
+                                    more
+                                    on the topic</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="parent4">
+                        <h4><span class="b it">::before <span class="nl">and</span> ::after</span> classes</h4>
+                        <p>The black text is in the HTML. Notice, how you cannot select the colored parts.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><br><br>
+
+
+        <section>
+            <h3>Importing custom fonts</h3>
+
+            <div id="fontsgrid1">
+
+                <div>
+                    <p>
+                        Go to <a href="https://fonts.google.com/" target="_blank">Google Web Fonts</a> and choose fonts
+                        of your
+                        liking. Just embed them by adding "<b>
+                            < link href="[insert link given to you]" rel="stylesheet">
+                        </b>" in the <strong>head</strong> of the <strong>HTML</strong> and reference the fonts by
+                        their name in CSS
+                        using the <b>font-family</b>
+                        property.<br>Note that different fonts will have different sizes, which should be fitted to the
+                        context's size.
+                    </p>
+                    <p>
+                        Find further instructions and tips <a href="https://developers.google.com/fonts/docs/getting_started"
+                            target="_blank">here</a>. Alternativly you can import local fonts from your computer with
+                        the <b>@font-face</b> property, although it is is highly unadvisable.
+                    </p>
+                </div>
+
+                <div id="fontsbox">
+                    <h4>Examples using custom fonts</h4>
+                    <table>
+                        <tr>
+                            <th id="font1">The quick brown fox jumps over the lazy dog.</th>
+                            <th id="font4">The quick brown fox jumps over the lazy dog.</th>
+                        </tr>
+                        <tr>
+                            <th id="font2">The quick brown fox jumps over the lazy dog.</th>
+                            <th id="font5">The quick brown fox jumps over the lazy dog.</th>
+                        </tr>
+                        <tr>
+                            <th id="font3">The quick brown fox jumps over the lazy dog.</th>
+                            <th id="font6">The quick brown fox jumps over the lazy dog.</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </section><br><br>
+
+        <section>
+            <h3>Opacity</h3>
+
+            <div id="opacity">
+
+                <p>The opacity property value must be a number <b>between 1 (fully
+                        opaque)</b> and <b>0 (fully transparent)</b>.
+                </p>
+
+                <div class="ex"></div>
+                <div class="ex" id="yeet"></div>
+                <div>
+                    <p>Play around with the slider to change the opacity:</p>
+                    <input type="range" step="0.01" min="0" max="1" value=".5" id="myslider3" oninput="changeOpacity(this.value)">
+                    <p>Current Value: <span id="cValue3"></span></p>
+                </div>
+            </div>
+
+        </section><br><br>
+
+        <section>
+            <h3>Gradients</h3>
+
+            <div id="grads">
+
+                <div>
+                    <h4>Linear</h4>
+
+                    <div id="mingrid">
+                        <div class="exbox" id="lin1">
+                            <p>Normal</p>
+                        </div>
+                        <div class="exbox" id="lin2">
+                            <p>Colorstops</p>
+                        </div>
+                        <div class="exbox" id="lin3">
+                            <p>Rotation</p>
+                            <input type="range" min="-360" max="360" value="0" step="1" id="rotSlider" oninput="changeRotation(this.value)">
+                        </div>
+                        <div class="exbox" id="lin4">
+                            <p>Repeating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Radial</h4>
+
+                    <div id="mingrid">
+                        <div class="exbox" id="rad1">
+                            <p>Normal</p>
+                        </div>
+                        <div class="exbox" id="rad2">
+                            <p>Shape: Circle</p>
+                        </div>
+                        <div class="exbox" id="rad3">
+                            <p>Position</p>
+                        </div>
+                        <div class="exbox" id="rad4">
+                            <p>Colorstops</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section><br><br><br>
+
+        <section>
+            <h3>Transitions and Animations</h3>
+
+            <table class="questions">
+                <tr>
+                    <th>What can be animated?</th>
+                    <th>When should animations be used?</th>
+                </tr>
+                <tr>
+                    <th>Generally, you should only animate properties
+                        that have <strong>numeric values</strong> to get smooth transitions between states. <a href="https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/"
+                            target="_blank">This article</a> explores <strong>performance-differences</strong> between
+                        animated properties, which should be considered on larger websites.</th>
+                    <th>Animations can make a website more appealing, but shouldn' t be overused. As a rule of thumb,
+                        animations are only useful to give the viewer <strong>orientation</strong> or <strong>visual
+                            feedback</strong>, or indicate <strong>functional change</strong>, <strong>new elements</strong>
+                        or <strong>system status</strong>.<br>
+                        See examples of the these cases <a href="https://codepen.io/devtips/pen/AXxGwO/" target="_blank">here</a>.</th>
+                </tr>
+            </table><br><br>
+
+
+            <p style="line-height: 25px;">
+                <b>Transitions</b> are ideal for <strong>one-time-use</strong> movements that only have two
+                keyframes:
+                <strong>start</strong> and <strong>end</strong>.<br>
+                The standard template goes as follows: <span style="background: rgba(0,0,0,.25); border-radius: 2px; color: white; padding: 2px 1px;"><span
+                        class="b it"> transition: <span style="color: rgb(250, 26, 71)">property</span> <span style="color: blue">duration</span>
+                        <span style="color: lightgreen">timing-function</span> <span style="color: rgb(255, 157, 66)">delay</span>
+                        ;</span></span><br>
+                Not all values must be included, not even the property value. Also make use of cubic-bezier-functions
+                for an eye-catch.
+            </p>
+
+            <p style="line-height: 25px;">
+                <b>Animations</b> give you <strong>more playback options</strong>. Written as keyframe rules,
+                animations can be <strong>reused</strong> and are more versatile since one can add as many <b>keyframes</b>
+                as needed.<br>
+                The standard template goes as follows: <span style="background: rgba(0,0,0,.25); border-radius: 2px; color: white; padding: 2px 1px;"><span
+                        class="b it"> animation: <span style="color: rgb(250, 26, 71)">name</span> <span style="color: blue">duration</span>
+                        <span style="color: lightgreen">timing-function</span> <span style="color: rgb(255, 157, 66)">delay</span>
+                        <span style="color: rgb(176, 0, 211)">iteration-count</span> <span style="color: rgb(6, 200, 235)">direction</span>
+                        ; </span></span><br>
+                Not all values must be included, not even the property value.
+            </p><br>
+
+
+            <div id="tranim">
+
+                <div id="transitions">
+
+                    <h4>Transitions</h4>
+
+
+                    <div class="exbox2" id="trans1">
+                        <p>Width extends out to max and element is skewed by -10deg on hover</p>
+                    </div><br><br>
+                    <div class="exbox2" id="trans2">
+                        <p>transform: rotate(-2deg) scale(1.1) on hover</p>
+                    </div><br><br>
+
+                    <div id="trans3">
+                        <div id="grid">
+
+                            <div class="containerHold">
+                                <p>The element moves using the <b>translate()</b> method.<br>You could also use
+                                    <strong>top bottom left right</strong> to move relative or absolute positioned
+                                    elements.</p>
+                            </div>
+
+                            <div id="movable">
+                                <p>Hover me for more info!</p>
+                            </div>
+
+                            <div class="containerHold"></div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="animations">
+
+                    <h4>Animations</h4>
+
+
+                    <div class="exbox2" id="anim1">
+                        <p>Colorchange that moves forwards then backwards and loops twice on hover</p>
+                    </div><br><br>
+
+                    <p class="it b">Here's a dropdown-menu example that uses different 3D-Transforms:</p>
+                    <nav id="ex">
+                        <ul>
+
+                            <li class="header">Style 1
+                                <ul class="drop-menu menu-1">
+                                    <li>One</li>
+                                    <li>Two</li>
+                                    <li>Three</li>
+                                    <li>Four</li>
+                                </ul>
+                            </li>
+
+                            <li class="header">Style 2
+                                <ul class="drop-menu menu-2">
+                                    <li>One</li>
+                                    <li>Two</li>
+                                    <li>Three</li>
+                                    <li>Four</li>
+                                </ul>
+                            </li>
+
+                            <li class="header">Style 3
+                                <ul class="drop-menu menu-3">
+                                    <li>One</li>
+                                    <li>Two</li>
+                                    <li>Three</li>
+                                    <li>Four</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+
+
+                    <div id="btn">
+
+                        <p class="it b">Here's a notification example that pops onto the screen:</p>
+                        <input type="text" maxlength="30" value="An important message" placeholder="max. 30 characters" onclick="clearText(this)">
+                        <button onclick="notification()">Send message</button>
+                    </div>
+
+                    <div id="noti">
+                        <div id="bg">
+                            <div id="img"></div>
+                        </div>
+                        <div id="content">
+                            <p>Textytext</p>
+                            <div id="progress"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div><br><br>
+
+            <aside id="side">
+                <p>Check out <a href="https://www.youtube.com/playlist?list=PLqGj3iMvMa4LvJ8VctoXnPI0dtE40wfid" target="_blank">this
+                        playlist</a> on animations for a detailed guide on transitions and animations with
+                    thourough
+                    examples.</p>
+            </aside>
+
+        </section>
+
+
+    </article> <br> <br>
+
+
+    <footer id="footer">
+        <a href="http://resizeimage.net/" target="_blank">Website to resize images</a>
+        <a href="https://freebiesupply.com/blog/css-text-effects-from-codepen/" target="_blank">Learn about cool
+            effects.</a>
+        <a href="https://coolors.co/ef476f-ffd166-06d6a0-3b3bb0-073b4c" target="_blank">Great Color-Picker</a>
+        <a href="http://colormind.io/bootstrap/" target="_blank">Good Color-Picker</a>
+        <a href="https://vscodecandothat.com/" target="_blank">VSCode can do that?</a>
+        <a href="https://www.youtube.com/playlist?list=PLEqGJ-zwQ9z0hirkuh4jKICfmi9nzNh4w" target="_blank">Informatik-Playlist</a>
+
+    </footer>
+
+</body>
+
+</html>

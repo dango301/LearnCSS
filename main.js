@@ -5,6 +5,7 @@ function cl(msg) { console.log(msg); }
 var headers, taskDad;
 var rect, mover;
 var progressbar;
+var notiButton;
 
 
 window.onload = function () {
@@ -55,10 +56,12 @@ window.onload = function () {
     document.querySelector("#trans3 #grid").addEventListener("mouseover", transHover);
     document.querySelector("#trans3 #grid").addEventListener("mouseleave", transHoverOut);
 
-    let sucj = document.querySelectorAll("#ws p");
-    for (i = 0; i < sucj.length; i++) {
-        sucj[i].innerHTML = 'CLASS: '+sucj[i].className/*+"yaaaaa\naaas"*/;
-    }
+    let wsEX = document.querySelectorAll("#ws table tr td:nth-child(2)");
+    wsEX.forEach(ex => {
+        ex.innerHTML = "This is an example with a line break now.\n And multiple spaces just before         this word."
+    });
+
+    notiButton = document.querySelector("#btn button");
 }
 
 
@@ -137,6 +140,7 @@ function showDropdown(c) {
 
 /* #region Notification */
 
+
 var iv1, isGoing = false; //iv1 is short for interval n
 var maxTime = 5000, passedTime = 0, interval = 10, maxWidth = 0;
 
@@ -145,6 +149,8 @@ function notification() {
     if (isGoing) { return; }
     isGoing = true;
     resetAnim();
+    notiButton.classList.add("blocked");
+
 
     progressbar = document.querySelector("#noti #progress");
     progressbar.style.opacity = 1;
@@ -178,6 +184,7 @@ function removeNoti() {
     document.querySelector("#noti #content").style.animation = "showText .33s ease-in-out 0s 1 reverse";
     document.querySelector("#noti #img").style.animation = "showBell .66s ease-in-out 0s 1 reverse";
     setTimeout(resetEl, 1000);
+    notiButton.classList.remove("blocked");
 }
 function resetEl() {
 

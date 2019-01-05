@@ -1181,6 +1181,13 @@ li:hover > ul.drop-menu li {
     cursor: pointer;
     
 }
+#btn button.blocked {
+    font-style: normal;
+    color: black;
+}
+#btn button.blocked:hover {
+    color: #444444;
+}
 
 
 
@@ -1196,33 +1203,36 @@ aside#side p {
 }
 
 
-#ws div {
-    /* overflow: hidden; */
-    height: 72px;
-    margin-bottom: 10px;
-    border-left: 2.5px solid white;
-    transition: border-left .25s linear .075s;
+#ws {overflow: hidden;}
+#ws table {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 20px 20px;
 }
-#ws p {
-    padding: 2px 5px;
-    margin: 0;
-    position: relative;
-    transition: .15s linear;
+#ws table th {
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+    color: white;
+    border-bottom: 3px solid white;
 }
-#ws div p:last-child {
-    top: -144px;
-}
-
-#ws div:hover {border-left: 2.5px solid #303030}
-#ws div:hover p:first-child {
-    top: 0;
-}
-#ws div:hover p:last-child {
-    top: 0;
+#ws table tr td {
+    border-bottom: 3px solid black;
+    padding: 5px 15px 10px 15px;
+    width: 50%;
 }
 
-#ws .ex1 {white-space: normal}
-#ws .ex2 {white-space: nowrap}
-#ws .ex3 {white-space: pre}
-#ws .ex4 {white-space: pre-line}
-#ws .ex5 {white-space: pre-wrap}
+#ws table th:first-child {width: 90%;}
+#ws table th:last-child {width: 10%;}
+
+#ws table tr td:first-child, #ws table th:first-child {
+    border-right: 3px solid white;
+}
+#ws table tr:last-child td {border-bottom: none;}
+
+
+#ws tr:nth-child(1) td:nth-child(2) {white-space: normal}
+#ws tr:nth-child(2) td:nth-child(2) {white-space: nowrap}
+#ws tr:nth-child(3) td:nth-child(2) {white-space: pre}
+#ws tr:nth-child(4) td:nth-child(2) {white-space: pre-line}
+#ws tr:nth-child(5) td:nth-child(2) {white-space: pre-wrap}

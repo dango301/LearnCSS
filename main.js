@@ -54,6 +54,11 @@ window.onload = function () {
 
     document.querySelector("#trans3 #grid").addEventListener("mouseover", transHover);
     document.querySelector("#trans3 #grid").addEventListener("mouseleave", transHoverOut);
+
+    let sucj = document.querySelectorAll("#ws p");
+    for (i = 0; i < sucj.length; i++) {
+        sucj[i].innerHTML = 'CLASS: '+sucj[i].className/*+"yaaaaa\naaas"*/;
+    }
 }
 
 
@@ -210,3 +215,4 @@ function clearText(caller) {
 }
 
 /* #endregion */
+

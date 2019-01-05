@@ -54,6 +54,12 @@ a:link::after, a:visited::after {
     content: " ";
 }
 
+.code {
+    background: rgba(0,0,0,.25);
+    color: white;
+    padding: 2px 1px;
+    border-radius: 2px;
+}
 
 
 body {
@@ -70,9 +76,10 @@ body {
 }
 
 article, footer, header {
-    padding: 2.5em;
+    padding: 20px;
     border: 3px solid white;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.75);
+    overflow: auto; /* just for now */
 }
 
 header {
@@ -199,7 +206,6 @@ aside#totop:hover a {
 }
 
 
-
 /* Customizing the content */
 
 #red {
@@ -212,9 +218,13 @@ aside#totop:hover a {
     padding: 0 2em 0 2em
 }
 #red .grid {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(4, auto);
-    gap: 3.5em;
+    gap: 3.5em; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
 }
 
 
@@ -232,7 +242,8 @@ aside#totop:hover a {
     top: -75%;
     left: 15%;
     font-weight: 600;
-    padding: 0; margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 #purple .grid2 {
@@ -319,7 +330,7 @@ a:link, a:visited
 .pixel2 { vertical-align: 10px}
 
 .smallcaps {font-variant: small-caps}
-.indent {text-indent: 15px}
+.indent {text-indent: 20px; border: 1px dotted white;}
 
 .inherit { text-decoration: inherit }
 .underline { text-decoration: underline }
@@ -347,7 +358,7 @@ a:link, a:visited
     border: 2px dotted white;
     padding: 0 0.5em;
 }
-#wordwrap p:last-child {word-wrap: break-word}
+#wordwrap p:last-child {word-wrap: break-word; hyphens: manual;}
 
 #borders p {width: 200px; padding: 2px 4px}
 .dotted {border-style: dotted}
@@ -546,7 +557,8 @@ a:hover.link3 {
     overflow: hidden;
 }
 #blue #overflow #child3 #overlay {
-    width: calc(125px - 1em); height: calc(128px - 1em);
+    width: calc(125px - 1em);
+    height: calc(128px - 1em);
     padding: 1em;
     background: linear-gradient(rgb(29, 191, 255), #e91ee3);
     position: relative;
@@ -1182,3 +1194,35 @@ aside#side p {
     border-left: 2.5px solid white;
     padding-left: 7.5px;
 }
+
+
+#ws div {
+    /* overflow: hidden; */
+    height: 72px;
+    margin-bottom: 10px;
+    border-left: 2.5px solid white;
+    transition: border-left .25s linear .075s;
+}
+#ws p {
+    padding: 2px 5px;
+    margin: 0;
+    position: relative;
+    transition: .15s linear;
+}
+#ws div p:last-child {
+    top: -144px;
+}
+
+#ws div:hover {border-left: 2.5px solid #303030}
+#ws div:hover p:first-child {
+    top: 0;
+}
+#ws div:hover p:last-child {
+    top: 0;
+}
+
+#ws .ex1 {white-space: normal}
+#ws .ex2 {white-space: nowrap}
+#ws .ex3 {white-space: pre}
+#ws .ex4 {white-space: pre-line}
+#ws .ex5 {white-space: pre-wrap}

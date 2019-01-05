@@ -72,6 +72,7 @@
 
         <ul>
             <li>White-space <a href="#red">here</a></li>
+            <li>fix and/or add hyphens <a href="#wordwrap">here</a></li>
             <li>Flexbox <a href="#grid2">here</a></li>
             <li>Imprint and Website description <a href="#">here</a></li>
         </ul>
@@ -91,7 +92,7 @@
 
     <article id="red">
         <h2>Modifying Text</h2>
-
+        
         <div class="grid">
 
             <section>
@@ -112,7 +113,7 @@
 
             <section>
                 <h3>Text Indent</h3>
-                <p class="indent">This text will be indeted. Notice that only the first line is affected by the
+                <p class="indent">This text will be indented.<br>Notice that only the first line is affected by the
                     text-indent property.</p>
             </section>
 
@@ -149,6 +150,37 @@
                     <p>Normal: Antidisestablishmentarianism </p>
                     <p>With Word-Wrap: Antidisestablishmentarianism </p>
                 </div>
+            </section>
+
+            <section>
+                <h3>White-Spacing</h3>
+
+                <p style="color: white">Hover over the boxes to see the original text, as it is written the code.</p>
+
+                <div id="ws">
+                    <div>
+                        <p class="ex1"></p>
+                        <p class="orig1"></p>
+                    </div>
+                    <div>
+                        <p class="ex2"></p>
+                        <p class="orig2"></p>
+                    </div>
+                    <div>
+                        <p class="ex3"></p>
+                        <p class="orig3"></p>
+                    </div>
+                    <div>
+                        <p class="ex4"></p>
+                        <p class="orig4"></p>
+                    </div>
+                    <div>
+                        <p class="ex5"></p>
+                        <p class="orig5"></p>
+                    </div>
+                </div>
+                <!-- Content of the paragraphs will be added via JS, so as not to impede the white spaces and line breaks when formatting -->
+                <p style="color: white">Hier müssen Berechnungen duch JS für die vertikale Position in Relation zur Höhe des darüber liegenden Elements gemacht werden.<br><a href="https://youtu.be/V0lIoo35Rrc">OR DO THIS</a></p>
             </section>
 
         </div>
@@ -632,13 +664,11 @@
                     <p>
                         Go to <a href="https://fonts.google.com/" target="_blank">Google Web Fonts</a> and choose fonts
                         of your
-                        liking. Just embed them by adding "<b>
-                            < link href="[insert link given to you]" rel="stylesheet">
-                        </b>" in the <strong>head</strong> of the <strong>HTML</strong> and reference the fonts by
-                        their name in CSS
-                        using the <b>font-family</b>
-                        property.<br>Note that different fonts will have different sizes, which should be fitted to the
-                        context's size.
+                        liking. Just embed them by adding <span class="code">
+                            < link href=" [link given to you] " rel="stylesheet">
+                        </span> in the <strong>head</strong> of the <strong>HTML</strong> and reference the fonts by
+                        their name in CSS using the <b>font-family</b> property.<br>Note that different fonts will have
+                        different sizes, which should be fitted to the context's size.
                     </p>
                     <p>
                         Find further instructions and tips <a href="https://developers.google.com/fonts/docs/getting_started"
@@ -762,8 +792,8 @@
                 <b>Transitions</b> are ideal for <strong>one-time-use</strong> movements that only have two
                 keyframes:
                 <strong>start</strong> and <strong>end</strong>.<br>
-                The standard template goes as follows: <span style="background: rgba(0,0,0,.25); border-radius: 2px; color: white; padding: 2px 1px;"><span
-                        class="b it"> transition: <span style="color: rgb(250, 26, 71)">property</span> <span style="color: blue">duration</span>
+                The standard template goes as follows: <span class="code"><span class="b it"> transition: <span style="color: rgb(250, 26, 71)">property</span>
+                        <span style="color: blue">duration</span>
                         <span style="color: lightgreen">timing-function</span> <span style="color: rgb(255, 157, 66)">delay</span>
                         ;</span></span><br>
                 Not all values must be included, not even the property value. Also make use of cubic-bezier-functions
@@ -774,8 +804,8 @@
                 <b>Animations</b> give you <strong>more playback options</strong>. Written as keyframe rules,
                 animations can be <strong>reused</strong> and are more versatile since one can add as many <b>keyframes</b>
                 as needed.<br>
-                The standard template goes as follows: <span style="background: rgba(0,0,0,.25); border-radius: 2px; color: white; padding: 2px 1px;"><span
-                        class="b it"> animation: <span style="color: rgb(250, 26, 71)">name</span> <span style="color: blue">duration</span>
+                The standard template goes as follows: <span class="code"><span class="b it"> animation: <span style="color: rgb(250, 26, 71)">name</span>
+                        <span style="color: blue">duration</span>
                         <span style="color: lightgreen">timing-function</span> <span style="color: rgb(255, 157, 66)">delay</span>
                         <span style="color: rgb(176, 0, 211)">iteration-count</span> <span style="color: rgb(6, 200, 235)">direction</span>
                         ; </span></span><br>
@@ -864,7 +894,8 @@
                     <div id="btn">
 
                         <p class="it b">Here's a notification example that pops onto the screen:</p>
-                        <input type="text" maxlength="30" value="An important message" placeholder="max. 30 characters" onclick="clearText(this)">
+                        <input type="text" maxlength="30" value="An important message" placeholder="max. 30 characters"
+                            onclick="clearText(this)">
                         <button onclick="notification()">Send message</button>
                     </div>
 
@@ -875,13 +906,13 @@
                         <div id="content">
                             <p>Textytext</p>
                             <div id="progress"></div>
-                            </div>
-
                         </div>
 
                     </div>
 
                 </div>
+
+            </div>
 
             </div><br><br>
 

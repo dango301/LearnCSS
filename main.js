@@ -2,63 +2,21 @@
 
 function cl(msg) { console.log(msg); }
 
-var headers, taskDad;
-var rect, mover;
+var navHeads;
+var taskDad;
 var progressbar;
 var notiButton;
 
-
 window.onload = function () {
 
-    /* #region Major fuck-up */
+    // screenSetup();
+    slidersSetup();
+    eventsSetup();
+    flexSetup();
 
-    // // window.addEventListener("resize", function () { myAwesomeFunc(par1, par2, par3); }); //how you pass parameters in an"anonymous function"
-
-    // var allBigs = document.querySelectorAll("header, article, footer");
-    // allBigs.forEach(biggie => {
-    //     biggie.style.width = "fit-content";
-    // });
-    // var allWidth = [];
-    // allBigs.forEach(w => {
-    //     allWidth.push(w.getBoundingClientRect().width);
-    // });
-    // let maxSize = Math.max.apply(null, allWidth);
-    // allBigs.forEach(e => {
-    //     e.style.width = maxSize + "px";
-    // });
-
-    /* #endregion */
-
-    changeOpacity(.5);
-    changeSize(75);
-    changePadding(25);
-    changeRotation(0);
-
-    document.querySelector("header #container").addEventListener("mouseover", textAnim);
-    document.querySelector("header #container").addEventListener("mouseleave", textAnimEnd);
-
-    headers = document.querySelectorAll("#ex .header");
-    headers.forEach(x => {
-        x.addEventListener("mouseover", showDropdown);
-    });
-
-    taskDad = document.querySelector("aside#tasks");
-    taskDad.addEventListener("mouseover", taskHover);
-    taskDad.addEventListener("mouseleave", taskHoverOut); //USE THIS instead of mouseout; works for selected element only, not its stupid children
-
-
-    rect = document.querySelector("#trans3 .containerHold:first-child").getBoundingClientRect();
-    mover = document.querySelector("#trans3 #movable");
-    mover.style.width = rect.width - 4 + "px";
-    mover.style.height = rect.height - 4 + "px";
-    mover.style.left = -rect.width + 2 + "px";
-
-    document.querySelector("#trans3 #grid").addEventListener("mouseover", transHover);
-    document.querySelector("#trans3 #grid").addEventListener("mouseleave", transHoverOut);
-
-    let wsEX = document.querySelectorAll("#ws table tr td:nth-child(2)");
+    let wsEX = document.querySelectorAll("#ws table tr td:last-child");
     wsEX.forEach(ex => {
-        ex.innerHTML = "This is an example with a line break now.\n And multiple spaces just before         this word."
+        ex.innerHTML = "In the code, there is a line break at the end of this very sentence.\nAlso, just before the last word of this sentence are supposed to be multiple                  spaces."
     });
 
     notiButton = document.querySelector("#btn button");
@@ -66,24 +24,88 @@ window.onload = function () {
 
 
 
-/* #region Terrible header Animation */
+function screenSetup() {
 
-function textAnim() {
-    document.querySelector("header #container table:lastchild").classList.add("start");
-}
-function textAnimEnd() {
-    document.querySelector("header #container table:lastchild").classList.remove("start");
+    // window.addEventListener("resize", function () { myAwesomeFunc(par1, par2, par3); }); //how you pass parameters in an"anonymous function"
+
+    var allBigs = document.querySelectorAll("header, article, footer");
+    allBigs.forEach(biggie => {
+        biggie.style.width = "fit-content";
+    });
+    var allWidth = [];
+    allBigs.forEach(w => {
+        allWidth.push(w.getBoundingClientRect().width);
+    });
+    let maxSize = Math.max.apply(null, allWidth);
+    allBigs.forEach(e => {
+        e.style.width = maxSize + "px";
+    });
+
 }
 
-function transHover() {
-    mover.style.left = rect.width - 2 + "px";
-}
-function transHoverOut() {
-    mover.style.left = -rect.width + 2 + "px";
+function slidersSetup() {
+
+    changeOpacity(.5);
+    changeSize(75);
+    changePadding(25);
+    changeRotation(0);
 }
 
-/* #endregion */
+function eventsSetup() {
 
+    navHeads = document.querySelectorAll("#ex .header");
+    navHeads.forEach(x => {
+        x.addEventListener("mouseover", showDropdown);
+    });
+
+    taskDad = document.querySelector("aside#tasks");
+    taskDad.addEventListener("mouseover", taskHover);
+    taskDad.addEventListener("mouseleave", taskHoverOut); //USE THIS instead of mouseout; works for selected element only, not any children
+}
+
+
+function flexSetup() {
+
+    var box = document.querySelector("#flex #ex");
+    box.style.height = document.querySelector("#flex #desc").getBoundingClientRect().height * .5 + 'px';
+
+    var boxRect = box.getBoundingClientRect(),
+        boxSize = boxRect.width * boxRect.height;
+
+    var pics = document.querySelectorAll("#flex img"),
+        labels = document.querySelectorAll("#flex #ex  p");
+
+    var averagePicSpace = boxSize / pics.length;
+
+
+    for (let i = 0; i < pics.length; i++) {
+
+        let img = new Image();
+        img.src = pics[i].src;
+        let origPicSize = img.width * img.height;
+
+        let range = (img.width * 1.5 < img.height) ? 0 : .5; //if img is too tall, don't add a random multiplier that would enlarge the img
+        let random = Math.random() * range + 1;
+        let multiplier = Math.sqrt(averagePicSpace / origPicSize) * random
+
+        pics[i].style.width = img.width * multiplier + 'px';
+        pics[i].style.height = img.height * multiplier + 'px';
+
+    }
+
+    box.style.height = 'auto';
+    box.style.opacity = 1;
+    box.style.position = 'relative';
+
+
+    for (let i = 0; i < labels.length; i++) {
+        labels[i].innerHTML = i + 1;
+
+        labels[i].style.left = labels[i].parentElement.offsetLeft + 10 + 'px';
+        labels[i].style.top = labels[i].parentElement.offsetTop + 10 + 'px';
+    }
+
+}
 
 /* #region Change Sliders */
 
@@ -123,12 +145,13 @@ function taskHoverOut(c) {
 }
 
 
-var dur = .25, delay = dur - 0.05;
 function showDropdown(c) {
 
+    var dur = .25, delay = dur - 0.05;
     var caller = c.srcElement;
-    for (let i = 0; i < headers.length; i++) {
-        if (caller == headers[i]) { var nButton = i + 1 }
+
+    for (let i = 0; i < navHeads.length; i++) {
+        if (caller == navHeads[i]) { var nButton = i + 1 }
     }
 
     var kids = caller.querySelectorAll("ul li");
@@ -184,10 +207,10 @@ function removeNoti() {
     document.querySelector("#noti #content").style.animation = "showText .33s ease-in-out 0s 1 reverse";
     document.querySelector("#noti #img").style.animation = "showBell .66s ease-in-out 0s 1 reverse";
     setTimeout(resetEl, 1000);
-    notiButton.classList.remove("blocked");
 }
 function resetEl() {
 
+    notiButton.classList.remove("blocked");
     var notiEl = document.querySelector("#noti");
     notiEl.style.zIndex = -98;
     notiEl.style.opacity = 0;

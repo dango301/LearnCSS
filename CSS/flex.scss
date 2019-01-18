@@ -1,0 +1,47 @@
+#flex #grid {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    #desc {
+        height: fit-content;
+        margin-right: 50px;
+    }
+
+
+    #ex {
+        width: 60vw;
+        border: 2px solid black;
+        padding: 0;
+        overflow: auto;
+        display: flex;
+        justify-content: space-around;
+        align-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        position: absolute;
+        opacity: 0; /* This will be set to 1 as soon as all has been loaded and setup correctly */
+
+
+        p {
+            width: fit-content;
+            background: rgba(#000, .6);
+            z-index: 2;
+            color: #fff;
+            font-family: Iceberg;
+            font-weight: 500;
+            font-size: 25px;
+            padding: 0 5px;
+            margin: 5px;
+            position: absolute;
+        }
+
+        img {
+            margin: 10px;
+            filter: saturate(1.25);
+            filter: brightness(1.15);
+        }
+
+    }
+
+}

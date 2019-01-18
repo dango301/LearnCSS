@@ -2,15 +2,21 @@
 <html>
 
 <head>
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Learn CSS</title>
+    <link rel="icon" href="Assets/css3_logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/ShowOff.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/flex.css" />
     <script src="main.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif|Marck+Script|Unlock|Merriweather|Cormorant+Infant:600|Iceberg|Monofett|Modern+Antiqua"
         rel="stylesheet">
-    <link rel="icon" href="Assets/css3_logo.png">
+
 </head>
 
 <body>
@@ -24,45 +30,7 @@
             <a href="https://www.sololearn.com/Play/JavaScript/" target="_blank">--> SoloLearn JS-Course</a>
         </div>
 
-        <div id="container">
-
-            <table>
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>made</td>
-                </tr>
-                <tr>
-                    <td>by</td>
-                </tr>
-                <tr>
-                    <td>Dennis Paust</td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-            </table>
-
-            <table>
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>suck</td>
-                </tr>
-                <tr>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>dick</td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-            </table>
-
-        </div>
+        <p>made by Dennis Paust</p>
 
     </header> <br> <br><br><br>
 
@@ -71,7 +39,6 @@
         <h2>To-Do:</h2>
 
         <ul>
-            <li>White-space <a href="#red">here</a></li>
             <li>fix and/or add hyphens <a href="#wordwrap">here</a></li>
             <li>Flexbox <a href="#grid2">here</a></li>
             <li>Imprint and Website description <a href="#">here</a></li>
@@ -92,7 +59,7 @@
 
     <article id="red">
         <h2>Modifying Text</h2>
-        
+
         <div class="grid">
 
             <section>
@@ -105,7 +72,6 @@
 
             <section>
                 <h3>Text Decoration</h3>
-                <p class="inherit">This text inherits the decoration of the parent.</p>
                 <p class="underline">This is underlined text.</p>
                 <p class="overline">This is overlined text.</p>
                 <p class="line-through">This is lined-through text.</p>
@@ -156,33 +122,44 @@
                 <h3>White-Spacing</h3>
 
                 <div id="ws">
-                <table>
-                    <tr>
-                        <th>Description</th>
-                        <th>Example</th>
-                    </tr>
-                    <tr>
-                        <td>Normal: Sequences of whitespace will collapse into a single whitespace. Text will wrap when necessary. This is default</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>nowrap: Sequences of whitespace will collapse into a single whitespace. Text will never wrap to the next line. The text continues on the same line until a <br> tag is encountered</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>pre: Whitespace is preserved by the browser. Text will only wrap on line breaks. Acts like the < pre > tag in HTML</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>pre-line: Sequences of whitespace will collapse into a single whitespace. Text will wrap when necessary, and on line breaks</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>pre-wrap: Whitespace is preserved by the browser. Text will wrap when necessary, and on line breaks</td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div><br><br>
+                    <table>
+                        <tr>
+                            <th>Value</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>Normal</td>
+                            <td>Sequences of whitespace will collapse into a single whitespace. Text will wrap when
+                                necessary. This is default</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Nowrap</td>
+                            <td>Sequences of whitespace will collapse into a single whitespace. Text will never wrap to
+                                the next line. The text continues on the same line until a <br> tag is encountered</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pre</td>
+                            <td>Whitespace is preserved by the browser. Text will only wrap on line breaks. Acts like
+                                the < pre> tag in HTML</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pre-line</td>
+                            <td>Sequences of whitespace will collapse into a single whitespace. Text will wrap when
+                                necessary, and on line breaks</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pre-wrap</td>
+                            <td>Whitespace is preserved by the browser. Text will wrap when necessary, and on line
+                                breaks</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div><br><br>
                 <!-- Content of the empty tds will be added via JS, so as not to impede the white spaces and line breaks when formatting -->
 
             </section>
@@ -523,14 +500,44 @@
         <section id="flex">
             <h3>FlexBox</h3>
 
-            <p style="width: 65vw">Lorem labore ut laborum incididunt ut ad consectetur dolor ea dolore duis dolore
-                sunt excepteur. Veniam eiusmod velit amet adipisicing labore sit adipisicing eu. Cupidatat qui dolore
-                ullamco adipisicing occaecat qui ullamco minim proident. Sunt officia labore nisi ex. Eu duis sint sint
-                sint consectetur. Labore eiusmod <a href="https://www.youtube.com/watch?v=G7EIAgfkhmg" target="_blank">yeeeeeeeeeeet</a>
-                esse ea esse incididunt nisi ea ad excepteur dolore.<br>Ea officia
-                nostrud voluptate ad reprehenderit ullamco non exercitation eu cupidatat quis ea. Sunt voluptate non
-                consequat in aliqua magna sint cillum anim adipisicing sint proident labore. Amet et culpa
-                reprehenderit cupidatat anim magna. Excepteur deserunt dolore commodo dolore do.</p>
+            <div id="grid">
+
+                <p id="desc">
+                    In consectetur nostrud on cupidatat esse elit incididunt duis pariatur deserunt. Anim et nostrud
+                    fugiat officia nisi nisi consequat consequat enim ut. <br><br>
+
+                    Sunt et Lorem id esse. Minim Lorem do eiusmod non elit proident culpa nulla ea aliquip sunt
+                    consequat duis. Voluptate non cupidatat excepteur minim incididunt nostrud sit esse. Nulla elit
+                    mollit irure et incididunt consectetur excepteur qui laborum. Eu ex pariatur eu in nulla deserunt
+                    labore in. <br><br>
+
+                    In consectetur nostrud on cupidatat esse elit incididunt duis pariatur deserunt. Anim et nostrud
+                    fugiat officia nisi nisi consequat consequat enim ut. <br><br>
+
+                    Sunt et Lorem id esse. Minim Lorem do eiusmod non elit proident culpa nulla ea aliquip sunt
+                    consequat duis. Voluptate non cupidatat excepteur minim incididunt nostrud sit esse. Nulla elit
+                    mollit irure et incididunt consectetur excepteur qui laborum. Eu ex pariatur eu in nulla deserunt
+                    labore in. <br><br>
+
+                    Laborum duis nisi duis velit. Labore reprehenderit tempor elit nostrud ut voluptate. Quis qui velit
+                    non sit eu pariatur ullamco in proident magna ad. Adipisicing et anim Lorem non cupidatat pariatur
+                    dolore non.
+                </p>
+
+                <div id="ex">
+
+                    <div><p></p><img src="./Assets/HP/ministry.jpg" alt="no pic" id="n1"></div>
+                    <div><p></p><img src="./Assets/HP/dobby.jpg" alt="no pic" id="n2"></div>
+                    <div><p></p><img src="./Assets/HP/tunnel.jpg" alt="no pic" id="n3"></div>
+                    <div><p></p><img src="./Assets/HP/voldy.jpg" alt="no pic" id="n4"></div>
+                    <div><p></p><img src="./Assets/HP/dumbledore.jpg" alt="no pic" id="n5"></div>
+                    <div><p></p><img src="./Assets/HP/items.png" alt="no pic" id="n6"></div>
+                    <div><p></p><img src="./Assets/HP/hogwarts.jpg" alt="no pic" id="n7"></div>
+                    <div><p></p><img src="./Assets/HP/tri.jpg" alt="no pic" id="n8"></div>
+
+                </div>
+
+            </div>
 
         </section>
 
@@ -665,12 +672,13 @@
             <div id="fontsgrid1">
 
                 <div>
-                    <p>
+                    <p style="line-height: 25px;">
                         Go to <a href="https://fonts.google.com/" target="_blank">Google Web Fonts</a> and choose fonts
                         of your
-                        liking. Just embed them by adding <span class="code">
-                            < link href=" [link given to you] " rel="stylesheet">
-                        </span> in the <strong>head</strong> of the <strong>HTML</strong> and reference the fonts by
+                        liking. Just embed them by adding <span class="code"><span class="blue">link</span> <span style="color: rgb(238, 255, 0)">href</span>=<span
+                                style="color: rgb(221, 9, 9)">" [link given to you] "</span> <span style="color: rgb(238, 255, 0)">rel</span>=<span
+                                style="color: rgb(221, 9, 9)">"stylesheet"</span> <span class="blue"></span></span> in
+                        the <strong>head</strong> of the <strong>HTML</strong> and reference the fonts by
                         their name in CSS using the <b>font-family</b> property.<br>Note that different fonts will have
                         different sizes, which should be fitted to the context's size.
                     </p>
@@ -719,6 +727,7 @@
                     <p>Current Value: <span id="cValue3"></span></p>
                 </div>
             </div>
+
 
         </section><br><br>
 
@@ -827,29 +836,27 @@
                     <div class="exbox2" id="trans1">
                         <p>Width extends out to max and element is skewed by -10deg on hover</p>
                     </div><br><br>
+
+
                     <div class="exbox2" id="trans2">
                         <p>transform: rotate(-2deg) scale(1.1) on hover</p>
                     </div><br><br>
 
+
                     <div id="trans3">
-                        <div id="grid">
+                        <p>The element moves using the <b>translate()</b> method.<br>You could also use
+                            <strong>'top', 'bottom', 'left' and 'right'</strong> to move relative or absolute
+                            positioned
+                            elements.</p>
 
-                            <div class="containerHold">
-                                <p>The element moves using the <b>translate()</b> method.<br>You could also use
-                                    <strong>top bottom left right</strong> to move relative or absolute positioned
-                                    elements.</p>
-                            </div>
-
-                            <div id="movable">
-                                <p>Hover me for more info!</p>
-                            </div>
-
-                            <div class="containerHold"></div>
-
+                        <div id="movable">
+                            <p>Hover me for more info!</p>
                         </div>
+
                     </div>
 
                 </div>
+
 
                 <div id="animations">
 
@@ -898,12 +905,15 @@
                     <div id="btn">
 
                         <p class="it b">Here's a notification example that pops onto the screen:</p>
+
                         <input type="text" maxlength="30" value="An important message" placeholder="max. 30 characters"
                             onclick="clearText(this)">
                         <button onclick="notification()">Send message</button>
+
                     </div>
 
                     <div id="noti">
+
                         <div id="bg">
                             <div id="img"></div>
                         </div>

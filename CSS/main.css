@@ -1,0 +1,278 @@
+h2 {color: white; margin: 0 0 1.5em 0;}
+h3 {font-weight: 900}
+h4 {text-decoration: underline; font-style: italic; font-weight: 900;}
+
+.uline, h2, h3 {text-decoration: underline}
+.it {font-style: italic}
+.b {font-weight: bold}
+.nl {
+    color: initial;
+    font-weight: initial;
+    text-decoration: initial;
+    font-style: initial;
+}
+
+/* Custom scrollbars are not supported in Firefox or IE/Edge.
+See more here: https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
+
+body::-webkit-scrollbar {width: 16.5px}
+body::-webkit-scrollbar-track {
+    background: rgb(31, 31, 54);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(67, 67, 100);
+}
+body::-webkit-scrollbar-thumb:hover {background: rgb(98, 98, 134)}
+body::-webkit-scrollbar-thumb:active {background: crimson}
+body::-webkit-scrollbar-button {
+    background-size: cover;
+    background-color: rgb(67, 67, 100);
+}
+body::-webkit-scrollbar-button:decrement {background-image: url("../Assets/arrowup.png")}
+body::-webkit-scrollbar-button:increment {background-image: url("../Assets/arrowdown.png")}
+body::-webkit-scrollbar-button:hover {background-color: rgb(98, 98, 134)}
+body::-webkit-scrollbar-button:active {background-color: crimson}
+
+::selection {
+    background: rgba(56, 56, 56, 0.25);
+    color: white;
+    text-shadow: 1.25px 1.25px 2px black;
+}
+
+a:link, a:visited
+{
+    color: white;
+    font-style: italic;
+    font-weight: 600;
+}
+a:link::after, a:visited::after {
+    white-space: pre-wrap;
+    content: " ";
+}
+a:link:hover, a:visited:hover {
+    position: relative;
+    bottom: 1.5px;
+    text-shadow: 0 1px 0px black;
+}
+
+.code {
+    background: rgba(0,0,0,.25);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 2px;
+}
+
+* {
+    font-family: Montserrat, 'Noto Serif', 'Times New Roman';
+    font-weight: 500;
+}
+
+body {
+    background-color: #F1F1F1;
+    padding: 0.25em;
+    background-image: url("../Assets/css_pic.jpg");
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+article, footer, header {
+    padding: 20px;
+    border: 3px solid white;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.75);
+    overflow: auto; /* just for now */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    background-color: rgb(0, 132, 255);
+    margin: 0.5em 0.5em 0 0.5em;
+    padding: 4em;
+    color: #F1F1F1;
+}
+
+
+aside#tasks {
+    z-index: 99;
+    position: fixed;
+    top: 0; right: 0;
+    margin: 0.75em; padding: 1.5em;
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 250px;
+    max-height: 30px;
+    border: 2.5px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+aside#tasks li {
+    color: white;
+    line-height: 1.3em;
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+}
+aside#tasks h2 {
+    margin-bottom: 1em; padding: 0;
+    width: auto; height: 30px;
+}
+aside#tasks:hover {
+    max-height: 45vh;
+    border: 2.5px solid white;
+    box-shadow: 0px 3px 4px black;
+    background-image: url("../Assets/OrangeGradient.jpg");
+    background-size: 150%;
+    animation: colorgrad2 15s ease-out infinite;
+}
+
+@keyframes colorgrad2 {
+    0% {background-position-y: 0%}
+    50% {background-position-y: 100%}
+    100% {background-position-y: 0%}
+}
+
+
+aside#totop {
+    z-index: 10;
+    width: 60px; height: 25px;
+    position: fixed;
+    bottom: -4px; right: 14px;
+    border: 3px solid rgba(255, 255, 255, 0.75);
+    border-right: none;
+    margin: 0 0 0 0; padding: 0.25em 0.5em;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+aside#totop a {
+    text-decoration: none;
+    font-style: normal;
+    color: rgb(218, 218, 218);
+    font-size: 1.25em;
+}
+aside#totop:hover {
+    border: 3px solid white;
+    color: white;
+    transform: scale(1.25);
+    bottom: 5px; right: 24px;
+    border-right: none; border-bottom: none;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    animation: colorgrad1 12s linear infinite;
+}
+@keyframes colorgrad1 {
+    0% {background-position: 0%}
+    100% {background-position: 400%}
+}
+aside#totop:hover a {
+    text-shadow:  1px 1px 5px black, 2px 2px black;
+}
+
+
+/* Customizing articles */
+
+#red {
+    background-color: rgb(247, 35, 52);
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 2em;
+}
+#red section {
+    padding: 0 2em 0 2em
+}
+#red .grid {
+    /* display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 3.5em; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+
+#purple {background-color: rgb(104, 54, 240)}
+#purple .qline p {width: 250px}
+
+#purple .grid1 {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+}
+#purple .grid1 img {transform: scale(0.75)}
+#purple .grid1 p {
+    max-width: 250px;
+    position: relative;
+    top: -75%;
+    left: 15%;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+#purple .grid2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3em;
+}
+
+#purple .grid3 {
+    margin: 4em 0;
+    display: grid;
+    grid-template-columns: 275px repeat(4, 3fr);
+    gap: 2em;
+}
+
+
+
+#blue {background-color: rgb(29, 191, 255)}
+
+#blue #grid1 {
+    display: grid;
+    grid-template-columns: 4fr repeat(3, 1fr);
+    gap: 3.5em;
+}
+
+#blue #grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 350px;
+    gap: 10em;
+}
+
+
+#yellow {background-color: rgb(245, 182, 35)}
+
+#yellow #gridA {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+}
+
+#yellow #gridB {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5em;
+}
+#yellow #gridB #grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4em;
+}
+#yellow #gridB #grid2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4em;
+}
+
+
+footer {
+    margin: 3.5em 3.5em 2em 3.5em;
+    padding: 2.5em;
+    border: 4.5px solid black;
+    border-radius: 1.5px;
+    background: rgba(0, 0, 0, 0.66);
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em 0;
+}

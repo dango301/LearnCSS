@@ -1,0 +1,59 @@
+#flex #grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+#flex #grid #desc {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 50px;
+}
+
+#flex #grid #ex {
+  width: 60vw;
+  border: 2px solid black;
+  padding: 0;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  opacity: 0;
+  /* This will be set to 1 as soon as all has been loaded and setup correctly */
+}
+
+#flex #grid #ex p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  color: #fff;
+  font-family: Iceberg;
+  font-weight: 500;
+  font-size: 25px;
+  padding: 0 5px;
+  margin: 5px;
+  position: absolute;
+}
+
+#flex #grid #ex img {
+  margin: 10px;
+  -webkit-filter: saturate(1.25);
+          filter: saturate(1.25);
+  -webkit-filter: brightness(1.15);
+          filter: brightness(1.15);
+}
+/*# sourceMappingURL=flex.css.map */

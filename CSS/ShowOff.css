@@ -1,0 +1,934 @@
+
+.sub { vertical-align: sub}
+.super { vertical-align: super}
+.pixel1 { vertical-align: -25px}
+.pixel2 { vertical-align: 10px}
+
+.smallcaps {font-variant: small-caps}
+.indent {text-indent: 20px; border: 1px dotted white;}
+
+.underline { text-decoration: underline }
+.overline { text-decoration: overline }
+.line-through { text-decoration: line-through }
+
+.shadow p {letter-spacing: 3px;}
+.shadow1 {text-shadow: rgb(44, 111, 255) -1px 5px 0.5em; }
+.shadow2 {text-shadow: black -2px -7.5px 0.5em; }
+.shadow3 {text-shadow: white 2px 0px 0.15em}
+.shadow4 {text-shadow: yellow 2px 3px 0.15em, black 5px 7.5px 0.1em}
+
+.capitalize {text-transform: capitalize}
+.uppercase {text-transform: uppercase}
+.lowercase {text-transform: lowercase}
+
+.letterspace1 {letter-spacing: 4px}
+.letterspace2 {letter-spacing: -1.5px}
+
+.wordspace1 {word-spacing: 16px}
+.wordspace2 {word-spacing: -8px}
+
+#wordwrap p {
+    width: 150px;
+    border: 2px dotted white;
+    padding: 0 0.5em;
+}
+#wordwrap p:last-child {word-wrap: break-word; hyphens: manual;}
+
+#borders p {width: 200px; padding: 2px 4px}
+.dotted {border-style: dotted}
+.dashed {border-style: dashed}
+.double {border-style: double}
+.groove {border-style: groove}
+.ridge {border-style: ridge}
+.inset {border-style: inset}
+.outset {border-style: outset}
+
+#listexample {line-height: 1.5em}
+#disc {list-style-type: disc}
+#square {list-style-type: square}
+#none {list-style-type: none}
+#lowerroman {list-style-type: lower-roman}
+#upperroman {list-style-type: upper-roman}
+#lowerlatin {list-style-type: lower-latin}
+#upperlatin {list-style-type: upper-latin}
+#loweralpha {list-style-type: lower-alpha}
+#upperalpha {list-style-type: upper-alpha}
+#lowergreek {list-style-type: lower-greek}
+#decimal {list-style-type: decimal}
+#decimalzero {list-style-type: decimal-leading-zero}
+#circle {list-style-type: circle}
+#customimg {list-style-image: url("../Assets/bulletpoint.png")}
+
+a.link1 {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: whitesmoke;
+}
+a:hover.link1 {
+    background-color: rgba(255, 255, 255, .15);
+    font-size: 18.5px;
+    font-weight: 550;
+    font-style: italic;
+}
+
+a.link2 {
+    font-style: italic;
+    color: rgb(255, 196, 0);
+    font-weight: 600;
+}
+a:hover.link2 {
+    position: relative;
+    top: -10px;
+    padding: 0.25em 0.5em 0.25em 0.25em;
+    background: rgba(255, 255, 255, .2);
+    text-decoration: none;
+    font-size: 20px;
+    text-shadow: 5px 3px 1px black;
+}
+
+a.link3 {
+    color: unset;
+    padding: 1px;
+    text-transform: capitalize;
+    color: whitesmoke;
+}
+a:hover.link3 {
+    margin-top: 5em;
+    padding: 4px;
+    background-color: rgb(100, 36, 255);
+    border-bottom: 1.25px solid white;
+    box-shadow: 0 0 7.5px whitesmoke;
+}
+
+#mouseover p {
+    width: 360px; /* 377px - 2*7px -2*1.5px */
+    margin: 0.5em 0 0 0; padding: 7px;
+    border: 1.5px dotted white;
+    cursor: not-allowed;
+}
+#mouseover img {cursor: crosshair;}
+
+/* bi is short for background-image */
+#bibanner {
+    width: auto; height: auto;
+    border: 3px solid white;
+    background-image: url("../Assets/swans-banner.jpg");
+    background-attachment: fixed;
+}
+#bibanner div {
+    padding: 20px; margin: 40px;
+    width: auto; height: auto;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 3px solid black;
+    line-height: 1.33em;
+    text-shadow: 0 0 0 black;
+}
+
+
+#purple .grid3 .bi, #purple .grid3 .bi2 {
+    width: auto; height: 225px;
+    border: 2px solid rgb(36, 36, 36);
+    position: relative;
+}
+#purple .grid3 .bi {background-image: url("../Assets/Zelda_Triforce.png")}
+#purple .grid3 .bi2 {background-image: url("../Assets/css_pic3.jpg"); background-size: cover;}
+
+#purple #qline {
+    height: min-content;
+    border-left: 3px solid white;
+    padding-left: 6px;
+}
+#purple #qline h4 {margin-top: 0.5em; padding-top: 0; text-decoration: none}
+#purple #qline p {margin-bottom: 0.5em; padding-bottom: 0;}
+
+
+#n1 #bi2 {background-repeat: repeat-x}
+#n1 #bi3 {background-repeat: repeat-y}
+#n1 #bi4 {background-repeat: no-repeat}
+
+#n2 #bi1 {overflow: hidden;}
+#n2 #bi2 {background-size: 45px; overflow: hidden;}
+#n2 #bi3 {background-size: contain; overflow: hidden;}
+#n2 #bi4 {background-size: cover; overflow: hidden;}
+
+#n3 #bi1 {
+    background-image: url(../Assets/css3_logo.png), url(../Assets/JackBlack.jpg), url(../Assets/css_pic3.jpg);
+    background-position: 98% 81%, bottom left, top left;
+    background-size: 25%, 20%, cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#n4 #bi1, #n4 #bi2, #n4 #bi3 {border: 5px dotted rgb(36, 36, 36); overflow: hidden;}
+#n4 #bi2 {background-clip: padding-box;}
+#n4 #bi3 {padding: 0 25px; background-clip: content-box;}
+
+.infoIcon {
+    position: absolute;
+    top: 0; right: 0;
+    width: 30px; height: 30px;
+    margin: 0.25em;
+    background-image: url(../Assets/Zelda_Shield.png);
+    background-size: contain;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: 0.33s;
+}
+
+.info {
+    position: absolute;
+    top: 2.5%; right: -100%;
+    width: 50%; height: 95%;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 2px 3px 4px rgb(56, 56, 56);
+    border-radius: 3px;
+    z-index: 2;
+    padding: 0;
+    transition: 0.33s;
+    overflow: auto;
+}
+.info p {
+    padding: 1em; margin: 0;
+    text-align: center;
+    
+}
+
+.grid3 .bi:hover .infoIcon, .grid3 .bi2:hover .infoIcon {opacity: 0}
+.grid3 .bi:hover .info, .grid3 .bi2:hover .info {right: 0%}
+
+
+
+#invisible {
+    width: auto;
+    padding: 0.75em;
+    border: 2px dashed black;
+}
+#invisible a { visibility: hidden}
+#invisible:hover a {visibility: visible}
+
+
+#blue #overflow {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
+    gap: 1em;
+}
+
+#blue #overflow p, #blue #overflow #child3 #text{
+    width: 125px; height: 125px;
+    margin: 0; padding: 0.5em;
+    border: 1.5px dashed black;
+    line-height: 1.25em;
+}
+
+#blue #overflow p:first-child {overflow: auto}
+#blue #overflow p:nth-child(2) {overflow-x: scroll}
+#blue #overflow p:last-child {overflow: visible}
+
+
+#blue #overflow #child3 {
+    width: calc(125px + 2*1.5px + 2*0.5em); height: calc(128px + 1em);
+    overflow: hidden;
+}
+#blue #overflow #child3 #overlay {
+    width: calc(125px - 1em);
+    height: calc(128px - 1em);
+    padding: 1em;
+    background: linear-gradient(rgb(29, 191, 255), #e91ee3);
+    position: relative;
+    bottom: 0; left: 0;
+    transition: 0.3s;
+}
+#blue #overflow #child3:hover #overlay {
+    bottom: calc(128px + 1em);
+    background: linear-gradient(#e91ee3, rgb(29, 191, 255));
+    border: 1.5px solid white;
+    border-bottom: none;
+}
+
+
+
+.float {
+    width: auto; height: 200px;
+    padding: 1.5em 1em;
+    overflow: auto;
+    border: 2px solid white;
+    font-size: 0.95em;
+}
+
+.float #img1 {
+    width: 80px; height: 80px;
+    background-image: url("../Assets/JackBlack.jpg");
+    background-size: contain;
+    border-radius: 50%;
+    border: 4px solid #D48398;
+    float: left;
+    shape-outside: circle();
+    margin: 0 2em 0.25em 0;
+}
+.float#two #img1 {
+    width: 100px; height: 100px;
+}
+
+.float #img2 {
+    width: 100px; height: 100px;
+    background-image: url("../Assets/Zelda_Shield.png");
+    background-size: contain;
+    border-radius: 50%;
+    float: right;
+    shape-outside: circle();
+    margin: 0;
+}
+.float#two p:last-child {clear: right}
+
+.float #img3  {
+    width: 75px; height: 75px;
+    background-image: url(../Assets/Zelda_Shield.png);
+    background-size: contain;
+    border-radius: 50%;
+    shape-outside: circle();
+    float: right;
+    margin: 0 0 0 0.5em;
+}
+
+.float#three #img3 {
+    width: 60px; height: 60px;
+    float: left;
+    margin: 0 0.5em 0 0;
+}
+.float#three p {float: left; width: 225px;}
+
+.float #img1:hover, .float #img2:hover, .float #img3:hover, .float #img4:hover {border: 3px solid white;}
+
+
+
+
+.rc {margin: 15px;}
+.rc p {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    color: black;
+}
+#rc1 {position: relative; top: 25px;}
+#rc1 p {position: relative; bottom: 20px;}
+
+.roundcorner1 {
+    width: 200px; height: 100px;
+    background-color: #F1F1F1;
+    border-radius: 15px;
+}
+.roundcorner2 {
+    width: 200px; height: 100px;
+    background-color: #F1F1F1;
+    border-radius: 0 25px 0 25px;
+}
+.roundcorner3 {
+    width: max-content; height: 50px;
+    background-color: #F1F1F1;
+    border-radius: 30px;
+}
+.roundcorner4 {
+    width: 100px; height: 100px;
+    background-color: #F1F1F1;
+    border-radius: 50px;
+}
+
+
+#fontsgrid1 .blue {font-weight: 600; color: rgb(0, 105, 243)}
+#fontsgrid1 .blue:first-child::before {content: '<'}
+#fontsgrid1 .blue:last-child::after {content: '>'}
+
+#fontsgrid1 {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 4em;
+}
+#fontsbox {
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    padding: 0 50px;
+}
+#fontsbox table {
+    border-spacing: 30px 20px;
+}
+#fontsbox h4 {
+    font-size: 17.5px;
+    text-align: center;
+    text-decoration: underline;
+    font-style: normal;
+}
+#font1 {font-family: 'Cormorant Infant'}
+#font2 {font-family: 'Iceberg'}
+#font3 {font-family: 'Marck Script'}
+#font4 {font-family: 'Modern Antiqua'}
+#font5 {font-family: 'Monofett'}
+#font6 {font-family: 'Unlock'}
+
+
+#yellow #grid1 #parent1 p:first-child {color: crimson}
+#yellow #grid1 #parent1 p:last-child {color: cornflowerblue}
+
+#yellow #grid1 #parent2 p:nth-child(3) {color: crimson}
+
+#yellow #grid1 #parent3 {
+    padding: 0 0.5em;
+    width: max-content;
+    border: 2px dotted white;
+    animation: colorgrad1 12s linear infinite;
+}
+#yellow #grid1 #parent3:hover {
+    background-image: url("../Assets/hover.png");
+    background-size: contain; 
+}
+#yellow #grid1 #parent3:hover p {visibility: hidden;}
+
+
+#yellow #grid2 #parent1::first-line {color: crimson}
+#yellow #grid2 #parent2::first-letter {font-size: 1.75em; color: crimson; font-family: Merriweather}
+#yellow #grid2 #parent3 #shadow {font-weight: bold; text-shadow: 1px 1px white;}
+#yellow #grid2 #parent3 ::selection {
+    /* Notice the space between the selector and the colon; it makes applicable children inherit the selection values. */
+    background: crimson;
+    color: white;
+    text-shadow: 1.25px 1.25px 2px black;
+}
+#yellow #grid2 #parent3 #shadow::selection {
+    background: black;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+#yellow #grid2 #parent3 ::selection::first-line {
+background-color: aqua;
+}
+
+#moreselection {
+    padding: 0.33em 0.5em;
+    width: max-content;
+    box-shadow: 1px 1px 2px black;
+    background: crimson;
+    color: white;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+#moreselection a {
+    text-decoration: none;
+    text-shadow: 1.25px 1.5px black;
+}
+#moreselection:hover {
+    transform: scale(1.15);
+}
+
+#yellow #grid2 #parent4 p::before {
+    content: url("../Assets/bulletpoint.png") " We added the colored parts using CSS only. ";
+    transform: scale(0.5);
+    color: rgb(3, 185, 3);
+    text-shadow: 1px 1px 2px rgb(182, 182, 182);
+}
+#yellow #grid2 #parent4 p::after {
+    content: " And customized them too.";
+    color: blue;
+    text-shadow: -1.75px 1.75px 1px rgb(146, 146, 146);
+    font-style: italic;
+}
+
+
+#opacity {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+}
+
+#opacity .ex {
+    border: 2px solid rgb(36, 36, 36);
+    background-image: url(../Assets/JackBlack.jpg);
+    background-size: contain;
+}
+
+
+
+#myslider1, #myslider2, #myslider3 {
+    -webkit-appearance: none;
+    background: none;
+    outline: none; /*Yaaaas, remember to always use this one*/
+    width: 100%;
+}
+
+::-webkit-slider-runnable-track {
+    height: 10px;
+    background:crimson;
+    border-radius: 5px;
+    border: .5px solid white;
+    opacity: .8;
+}
+::-webkit-slider-runnable-track:hover {opacity: 1;}
+
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-top: -5px;
+}
+
+#myslider1::-webkit-slider-thumb, #myslider2::-webkit-slider-thumb {background: crimson}
+#myslider3::-webkit-slider-thumb {background: rgb(245, 182, 35)}
+
+#myslider1, #myslider2, #myslider3:hover {cursor: pointer; opacity: 1;}
+
+#cValue1, #cValue2 {color: black; font-weight: bold;}
+#cValue3 {color: white; font-weight: bold;}
+
+
+
+#grads {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em;
+}
+#mingrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1em;
+}
+.exbox {
+    width: auto;
+    height: 150px;
+    border: 1.5px solid white;
+}
+
+#grads p {
+    width: fit-content;
+    padding: 2px 10px;
+    margin: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#lin1 {background: linear-gradient(red, blue)}
+#lin2 {background: linear-gradient(black 25%, red 40%, red 50%, gold 85%)}
+#lin3 {background: linear-gradient(45deg, black, white)}
+#lin4 {background: repeating-linear-gradient(red, blue 30px)}
+
+#rad1 {background: radial-gradient(red, blue)}
+#rad2 {background: radial-gradient(circle, red, blue)}
+#rad3 {background: -webkit-radial-gradient(top, black 20%, white 70%)}
+#rad4 {background: radial-gradient(circle, gold 10%, red 30%, rgb(207, 135, 0) 40%,rgb(207, 135, 0) 45%, black 50%)}
+
+
+
+
+table.questions {
+    border-collapse: separate;
+    border-spacing: 80px 20px;
+    text-align: left;
+}
+table.questions th {
+    width: 50%;
+    font-weight: 500;
+}
+table.questions tr:first-child th {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+
+#tranim {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em;
+}
+
+#transitions .exbox2 {
+    width: 400px;
+    height: 150px;
+    border: 2px solid black;
+    background: url("../Assets/css_pic2.jpg");
+    background-size: contain;
+    transition: .5s ease-in-out;
+}
+#trans1:hover {width: 100%; transform: skew(-10deg)}
+#trans2:hover {transform: rotate(-2deg) scale(1.1)}
+
+
+#trans3 {
+    background: rgba(0, 0, 0, 0.25);
+    width: 300px;
+    height: 150px;
+    border: 2px solid black;
+    transition: .5s ease-in-out;
+    margin: 0;
+}
+#trans3>p {
+    background: transparent;
+    width: 258px;
+    height: 110px;
+    margin: 0;
+    padding: 20px;
+    color: #FFF;
+    font-size: 15px;
+    vertical-align: center;
+}
+
+#trans3 #movable {
+    width: 298px;
+    height: 150px;
+    background: url("../Assets/css_pic2.jpg");
+    background-size: contain;
+    margin: 0;
+    border-right: 2px solid transparent;
+    position: relative;
+    top: -158px;
+    left: 0;
+    transform-origin: left;
+    transition: .5s ease-in-out .01s;
+}
+
+#trans3 #movable p, .exbox2 p {
+    background: rgba(0, 0, 0, 0.6);
+    width: fit-content;
+    height: fit-content;
+    padding: 4px;
+    margin: 8px;
+    color: #FFF;
+    font-size: 15px;
+}
+#trans3 #movable p {
+    position: relative;
+    top: 8px;
+}
+
+#trans3:hover {width: 600px;}
+#trans3:hover #movable {
+    left: 600px;
+    border-right: 2px solid #000;
+    transform: rotateY(180deg);
+}
+
+
+#anim1 {
+    width: 400px;
+    height: 150px;
+    border: 2px solid black;
+    background: crimson
+}
+#anim1:hover {animation: colorchange 3.5s linear 0s 4 alternate;}
+@keyframes colorchange {
+    0% {background: crimson}
+    100% {background: #1DBFFF}
+}
+
+
+nav#ex > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  background: #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+nav#ex > ul > li {
+  float: left;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+nav#ex > ul > li:hover {
+  background: #cacaca;
+  border-radius: 5px 5px 0 0;
+}
+
+ul.drop-menu {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  padding: 0;
+  perspective: 250px; /* Suuuuper useful, remember to put this in the parent when using 3D-Transforms*/
+}
+ul.drop-menu li {
+  color: rgba(255, 255, 255, .8);
+  box-shadow: 0 1.5px 5px black;
+  opacity: 0;
+  transform-origin: center top;
+  background: crimson;
+  letter-spacing: 2.75px;
+}
+ul.drop-menu li:hover {
+  background: rgb(182, 39, 39);
+  color: white;
+}
+ul.drop-menu li:last-child {
+  border-radius: 0px 0px 5px 5px;
+}
+
+ul.drop-menu li {
+  display: none;
+}
+
+li:hover > ul.drop-menu li {
+    display: block;
+}
+.menu-3 li {transform-origin: top right}
+
+@keyframes dropanim1 {
+
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+    60% {
+        transform: rotateX(30deg) scale(1.1);
+    }
+    70% {
+        transform: rotateX(30deg) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg) scale(1);
+    }
+}
+
+@keyframes dropanim2 {
+
+    0% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+    70% {
+        transform: rotateY(20deg);
+    }
+    100% {
+        transform: rotateY(0deg) translate(0, 0);
+        opacity: 1;
+    }
+}
+@keyframes dropanim3 {
+
+    0% {
+        opacity: 0;
+        transform: rotate(-30deg) translateX(30px);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) translateX(0);
+    }
+}
+
+
+#animations #btn {
+    margin-top: 180px;
+}
+
+
+#noti {
+    min-width: 300px;
+    height: 50px;
+    position: fixed;
+    bottom: 35vh;
+    right: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 75px;
+    padding: 0px;
+    z-index: -98;
+    transform: scale(1.1);
+
+    opacity: 0;
+    transform-origin: top left;
+}
+#noti #bg {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px 0 0 4px;
+    background: rgba(255, 255, 255, 0.75);
+}
+#noti #img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background: url("../Assets/bell.jpg");
+    filter: saturate(10);
+    background-size: cover;
+    
+    opacity: 0;
+    transform: scale(.1) rotateY(0deg);
+    transform-origin: bottom center;
+}
+#noti #content {
+    background: rgba(0,0,0,.775);
+    border-radius: 0 4px 4px 0;
+    min-width: 200px;
+    padding: 0;
+    margin: 0;
+
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+
+    transform: rotateY(90deg);
+    transform-origin: left;
+}
+#noti #content p {
+    position: relative;
+    bottom: 5px;
+    padding: 0 15px;
+}
+#noti #progress {
+    height: 5px;
+    border-radius: 0 4px 4px 0;
+    background: #004BFF;
+    position: relative;
+    bottom: 20px;
+}
+
+
+@keyframes showNoti {
+    0% {
+        z-index: 98;
+        opacity: 0;
+        transform: rotate(45deg) translateX(150%);
+    }
+
+    80% {
+        transform: translateX(-5%) rotate(-5deg);
+    }
+
+    100% {
+        z-index: 98;
+        opacity: 1;
+        transform: rotate(0deg) translateX(0%);
+    }
+}
+@keyframes showText {
+    0% {
+        transform: rotateY(90deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+@keyframes showBell {
+    0% {
+        transform: scale(.1) rotateY(-180deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+}
+@keyframes outNoti {
+    0% {
+        right: 0;
+    }
+    20% {
+        right: 10%;
+    }
+    100% {
+        right: -100%;
+    }
+}
+
+#btn input[type=text] {
+    border: 1.5px solid #6d6d6d;
+    border-radius: 3px;
+    padding: 3px 8px;
+    font-size: 13.5px;
+    width: 30ch;
+    box-shadow: none;
+}
+#btn input[type=text]:hover {
+    border: 1.5px solid #0087c5;
+}
+#btn input[type=text]:focus {
+    border: 1.5px solid #03a9f4;
+}
+
+#btn button {
+    background: #6d6d6d;
+    border: 1.5px solid #6d6d6d;
+    border-radius: 2px;
+    padding: 3px 8px;
+    font-size: 13.5px;
+    color: white;
+    outline: none;
+}
+#btn button:hover {
+    color: #03a9f4;
+    background: rgb(100, 100, 100);
+    font-style: italic;
+    cursor: pointer;
+    
+}
+#btn button.blocked {
+    font-style: normal;
+    color: black;
+}
+#btn button.blocked:hover {
+    color: #444444;
+}
+
+
+
+aside#side {
+    display: flex;
+    justify-content: flex-end;
+}
+aside#side p {
+    width: 30vw;
+    font-size: 16px;
+    border-left: 2.5px solid white;
+    padding-left: 7.5px;
+}
+
+
+#ws table {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 20px 20px;
+}
+#ws table th {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 30px 5px 30px;
+    color: white;
+    border-bottom: 3px solid white;
+}
+#ws table tr td {
+    border-bottom: 3px solid black;
+    padding: 15px 20px;
+}
+
+#ws table tr td:not(:last-child), #ws table th:not(:last-child) {
+    border-right: 3px solid white;
+}
+#ws table tr:last-child td {border-bottom: none;}
+
+
+#ws tr:nth-child(1) td:last-child {white-space: normal}
+#ws tr:nth-child(2) td:last-child {white-space: nowrap}
+#ws tr:nth-child(3) td:last-child {white-space: pre}
+#ws tr:nth-child(4) td:last-child {white-space: pre-line}
+#ws tr:nth-child(5) td:last-child {white-space: pre-wrap}

@@ -1,7 +1,7 @@
 #flex #grid {
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 40% 60%;
     
     #desc {
         height: fit-content;
@@ -9,18 +9,94 @@
     }
 
 
+    #container {
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0px 4px 5px 2px black;
+    }
+
+    $red: rgb(255, 47, 65);
+    $offGrey: rgb(179, 179, 179);
+    $BGGrey: #474747;
+    $BGDarkGrey: #2b2b2b;
+
+    #settings {
+        margin: 0;
+        padding: 15px;
+        background: $BGGrey;
+        box-shadow: 0 10px 15px 5px rgb(255, 0, 0);
+
+        h4 {
+            text-decoration: none;
+            font-style: normal;
+            margin: 0;
+            font-size: 18.5px;
+            font-family: Merriweather;
+            color: $red;
+        }
+        h5 {
+            font-weight: 500;
+            font-size: 14px;
+            margin: 5px 0;
+            color: white;
+            font-family: Merriweather;
+        }
+
+        >div {
+            display: flex;
+            flex-wrap: wrap;
+
+            .value {
+                position: relative;
+                margin: 5px 15px;
+
+
+                .border {
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    background: $offGrey;
+                    transition: .15s ease-in-out;
+                }
+            
+                button {
+                    background: $BGGrey;
+                    border: none;
+                    outline: none;
+                    padding: 3px 5px;
+                    font-family: Merriweather;
+                    font-size: 14px;
+                    color: $offGrey;
+                    position: relative;
+                }
+
+            }
+
+            .value:hover {
+
+                .border {
+                    background: $red;
+                    width: 12px;
+                    height: 10px;
+                }
+
+                button:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+
     #ex {
-        width: 60vw;
-        border: 2px solid black;
-        padding: 0;
+        background: $BGDarkGrey;
+        padding: 25px 0 0 0;
         overflow: auto;
         display: flex;
         justify-content: space-around;
         align-content: space-around;
         align-items: flex-start;
         flex-wrap: wrap;
-        position: absolute;
-        opacity: 0; /* This will be set to 1 as soon as all has been loaded and setup correctly */
+        position: absolute; opacity: 0; /* These will be reset as soon as everything has been loaded and setup correctly */
 
 
         p {
@@ -40,6 +116,7 @@
             margin: 10px;
             filter: saturate(1.25);
             filter: brightness(1.15);
+            border: 2px solid white;
         }
 
     }

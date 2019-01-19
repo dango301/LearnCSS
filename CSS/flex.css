@@ -1,8 +1,8 @@
 #flex #grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
 }
 
 #flex #grid #desc {
@@ -12,10 +12,84 @@
   margin-right: 50px;
 }
 
+#flex #grid #container {
+  overflow: hidden;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 4px 5px 2px black;
+          box-shadow: 0px 4px 5px 2px black;
+}
+
+#flex #grid #settings {
+  margin: 0;
+  padding: 15px;
+  background: #474747;
+  -webkit-box-shadow: 0 10px 15px 5px red;
+          box-shadow: 0 10px 15px 5px red;
+}
+
+#flex #grid #settings h4 {
+  text-decoration: none;
+  font-style: normal;
+  margin: 0;
+  font-size: 18.5px;
+  font-family: Merriweather;
+  color: #ff2f41;
+}
+
+#flex #grid #settings h5 {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 5px 0;
+  color: white;
+  font-family: Merriweather;
+}
+
+#flex #grid #settings > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#flex #grid #settings > div .value {
+  position: relative;
+  margin: 5px 15px;
+}
+
+#flex #grid #settings > div .value .border {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #b3b3b3;
+  -webkit-transition: .15s ease-in-out;
+  transition: .15s ease-in-out;
+}
+
+#flex #grid #settings > div .value button {
+  background: #474747;
+  border: none;
+  outline: none;
+  padding: 3px 5px;
+  font-family: Merriweather;
+  font-size: 14px;
+  color: #b3b3b3;
+  position: relative;
+}
+
+#flex #grid #settings > div .value:hover .border {
+  background: #ff2f41;
+  width: 12px;
+  height: 10px;
+}
+
+#flex #grid #settings > div .value:hover button:hover {
+  color: white;
+}
+
 #flex #grid #ex {
-  width: 60vw;
-  border: 2px solid black;
-  padding: 0;
+  background: #2b2b2b;
+  padding: 25px 0 0 0;
   overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,7 +105,7 @@
       flex-wrap: wrap;
   position: absolute;
   opacity: 0;
-  /* This will be set to 1 as soon as all has been loaded and setup correctly */
+  /* These will be reset as soon as everything has been loaded and setup correctly */
 }
 
 #flex #grid #ex p {
@@ -55,5 +129,6 @@
           filter: saturate(1.25);
   -webkit-filter: brightness(1.15);
           filter: brightness(1.15);
+  border: 2px solid white;
 }
 /*# sourceMappingURL=flex.css.map */

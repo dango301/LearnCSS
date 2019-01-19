@@ -66,11 +66,11 @@ function eventsSetup() {
 
 function flexSetup() {
 
-    var box = document.querySelector("#flex #ex");
-    box.style.height = document.querySelector("#flex #desc").getBoundingClientRect().height * .5 + 'px';
+    var exBox = document.querySelector("#flex #ex");
+    exBox.style.height = document.querySelector("#flex #desc").getBoundingClientRect().height * .1 + 'px';
 
-    var boxRect = box.getBoundingClientRect(),
-        boxSize = boxRect.width * boxRect.height;
+    var exBoxRect = exBox.getBoundingClientRect(),
+        boxSize = exBoxRect.width * exBoxRect.height;
 
     var pics = document.querySelectorAll("#flex img"),
         labels = document.querySelectorAll("#flex #ex  p");
@@ -84,25 +84,48 @@ function flexSetup() {
         img.src = pics[i].src;
         let origPicSize = img.width * img.height;
 
-        let range = (img.width * 1.5 < img.height) ? 0 : .5; //if img is too tall, don't add a random multiplier that would enlarge the img
-        let random = Math.random() * range + 1;
-        let multiplier = Math.sqrt(averagePicSpace / origPicSize) * random
+        let minValue = (img.width > img.height) ? 1.5 : 1, //minimum multiplier value & enlarge landscape images to emphasize
+            range = (img.width * 1.5 < img.height) ? .25 : .75, //if img is very tall, don't enlarge the img too much
+            random = Math.random() * range + minValue;
+        let multiplier = Math.sqrt(averagePicSpace / origPicSize)/* * random*/;
 
         pics[i].style.width = img.width * multiplier + 'px';
         pics[i].style.height = img.height * multiplier + 'px';
 
     }
 
-    box.style.height = 'auto';
-    box.style.opacity = 1;
-    box.style.position = 'relative';
+    exBox.style.height = 'auto';
+    exBox.style.opacity = 1;
+    exBox.style.position = 'relative';
 
 
     for (let i = 0; i < labels.length; i++) {
         labels[i].innerHTML = i + 1;
 
-        labels[i].style.left = labels[i].parentElement.offsetLeft + 10 + 'px';
-        labels[i].style.top = labels[i].parentElement.offsetTop + 10 + 'px';
+        labels[i].style.left = labels[i].parentElement.offsetLeft + 12 + 'px';
+        labels[i].style.top = labels[i].parentElement.offsetTop + 12 + 'px';
+    }
+
+
+    var valueOptions = document.querySelectorAll("#flex #settings .value"),
+        valueButtons = document.querySelectorAll("#flex #settings .value button");
+    var offset = '-2px';
+
+
+    for (var i = 0; i < valueOptions.length; i++) {
+
+        for (let n = 0; n < 4; n++) {
+            let border = document.createElement("div");
+            border.classList.add("border");
+            valueOptions[i].insertBefore(border, valueButtons[i]);
+
+            if (n % 2 == 0) { border.style.left = offset }
+            else { border.style.right = offset }
+
+            if (n % 3 == 0) { border.style.top = offset }
+            else { border.style.bottom = offset }
+        }
+
     }
 
 }

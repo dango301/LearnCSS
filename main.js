@@ -67,7 +67,8 @@ function eventsSetup() {
 function flexSetup() {
 
     var exBox = document.querySelector("#flex #ex");
-    exBox.style.height = document.querySelector("#flex #desc").getBoundingClientRect().height * .1 + 'px';
+    exBox.style.height = document.querySelector("#flex #desc").getBoundingClientRect().height * .0425 + 'px';
+    // 0.0425 is a hand-tested value to make the images as large as possible, while keeping the random multiplier in mind, so that no images could be  pushed into a third row
 
     var exBoxRect = exBox.getBoundingClientRect(),
         boxSize = exBoxRect.width * exBoxRect.height;
@@ -87,7 +88,7 @@ function flexSetup() {
         let minValue = (img.width > img.height) ? 1.5 : 1, //minimum multiplier value & enlarge landscape images to emphasize
             range = (img.width * 1.5 < img.height) ? .25 : .75, //if img is very tall, don't enlarge the img too much
             random = Math.random() * range + minValue;
-        let multiplier = Math.sqrt(averagePicSpace / origPicSize)/* * random*/;
+        let multiplier = Math.sqrt(averagePicSpace / origPicSize) * random;
 
         pics[i].style.width = img.width * multiplier + 'px';
         pics[i].style.height = img.height * multiplier + 'px';
@@ -127,7 +128,40 @@ function flexSetup() {
         }
 
     }
+    
+    let valueHolder = document.querySelector("#flex #settings div");
+    valueHolder.style.height = valueHolder.getBoundingClientRect().height + 10 + 'px';
+    
 
+    // MAKE THIS MORE ACCURATE
+    setTimeout(function () {flexValueActivate(document.querySelector("#flex #settings .value button"))}, 2000);
+    // The first value-option represents the standard value and therfore has to be selected by default
+}
+
+
+function flexValueActivate(caller) {
+
+    let values = document.querySelectorAll("#flex #settings .value");
+    values.forEach(el => {
+        el.classList.remove("activated");
+    });
+    
+    var cValue = caller.parentNode;
+    cValue.classList.add("activated");
+
+
+    let borders = document.querySelectorAll("#flex #settings .value .border");
+    for (let i = 0; i < borders.length; i++) {
+
+        borders[i].style.width = '8px';
+        borders[i].style.height = '8px';
+    }
+
+    var cBorders = cValue.childNodes;
+    for (let i = 0; i < 4; i++) {
+        cBorders[i].style.width = caller.getBoundingClientRect().width / 2 + 2 + 'px';
+        cBorders[i].style.height = caller.getBoundingClientRect().height / 2 - 1 + 'px';
+    }
 }
 
 /* #region Change Sliders */

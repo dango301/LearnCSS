@@ -9,17 +9,17 @@ var notiButton;
 
 window.onload = function () {
 
-    // screenSetup();
-    slidersSetup();
-    eventsSetup();
-    flexSetup();
-
     let wsEX = document.querySelectorAll("#ws table tr td:last-child");
     wsEX.forEach(ex => {
         ex.innerHTML = "In the code, there is a line break at the end of this very sentence.\nAlso, just before the last word of this sentence are supposed to be multiple                  spaces."
     });
 
     notiButton = document.querySelector("#btn button");
+
+    // screenSetup();
+    slidersSetup();
+    eventsSetup();
+    flexSetup();
 }
 
 
@@ -65,6 +65,21 @@ function eventsSetup() {
 
 
 function flexSetup() {
+
+    var menuList = [];
+    var lists = document.querySelectorAll("#flex #menu ul");
+
+    for (var l = 0; l < lists.length; l++) {
+
+        menuList[l] = [];
+        var items = lists[l].children;
+
+        for (let i = 0; i < items.length; i++) {
+            menuList[l][i] = items[i];
+        }
+    }
+    cl(menuList);
+
 
     var exBox = document.querySelector("#flex #ex");
     exBox.style.height = document.querySelector("#flex #desc").getBoundingClientRect().height * .0425 + 'px';
@@ -128,14 +143,25 @@ function flexSetup() {
         }
 
     }
-    
+
     let valueHolder = document.querySelector("#flex #settings div");
     valueHolder.style.height = valueHolder.getBoundingClientRect().height + 10 + 'px';
-    
 
-    // MAKE THIS MORE ACCURATE
-    setTimeout(function () {flexValueActivate(document.querySelector("#flex #settings .value button"))}, 2000);
-    // The first value-option represents the standard value and therfore has to be selected by default
+
+    var flexUp = setInterval(function() {flexUpdate(flexUp)}, 50);
+    // The first value-option represents the standard value and therfore has to be selected by default but only when it is well visible on the user's screen
+}
+
+function flexUpdate(iv) {
+    var flexRect = document.querySelector("#flex #settings").getBoundingClientRect(),
+        pos = -flexRect.top,
+        vh = window.innerHeight;
+    pos += vh;
+
+    if (pos > vh / 2 && pos < vh) {
+        flexValueActivate(document.querySelector("#flex #settings .value button"));
+        clearInterval(iv);
+    }
 }
 
 
@@ -145,7 +171,7 @@ function flexValueActivate(caller) {
     values.forEach(el => {
         el.classList.remove("activated");
     });
-    
+
     var cValue = caller.parentNode;
     cValue.classList.add("activated");
 

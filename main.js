@@ -66,8 +66,13 @@ function eventsSetup() {
 
 function flexSetup() {
 
+    var colorFlow = 'rgb(255, 47, 65)';
+    var colorLayout = 'rgb(100, 85, 255)';
+    var colorOther = 'rgba(53, 255, 105, 1)';
+
     var menuList = [];
     var lists = document.querySelectorAll("#flex #menu ul");
+    var maxListWidth = [0, 0, 0];
 
     for (var l = 0; l < lists.length; l++) {
 
@@ -76,9 +81,45 @@ function flexSetup() {
 
         for (let i = 0; i < items.length; i++) {
             menuList[l][i] = items[i];
+
+            let cWidth = menuList[l][i].getBoundingClientRect().width * 2;
+            maxListWidth[l] = cWidth > maxListWidth[l] ? cWidth : maxListWidth[l];
+
+            if (l == 0) {
+
+                switch (i) {
+                    case 0:
+                        menuList[l][i].style.background = colorFlow;
+                        break;
+                    case 1:
+                        menuList[l][i].style.background = colorLayout;
+                        break;
+                    case 2:
+                        menuList[l][i].style.background = colorOther;
+                        break;
+                }
+
+            }
+
         }
     }
-    cl(menuList);
+
+    var slant = 15;// [px]
+    for (let l = 0; l < menuList.length; l++) {
+
+        var padding = slant + 10;
+        var maxSlantPercent = slant / (maxListWidth[l] + padding) * 100;
+
+        for (let i = 0; i < menuList[l].length; i++) {
+
+            menuList[l][i].style.width = maxListWidth[l] + 'px';
+
+            menuList[l][i].style.clipPath = 'polygon(0 0, ' + (100 - maxSlantPercent) + '% 0, 100% 100%, ' + maxSlantPercent + '% 100%)';
+
+            menuList[l][i].style.padding = '7.5px ' + (padding / 2) + 'px';
+            menuList[l][i].style.left = (l != 0) ? (slant * i - slant * l) + 'px' : (slant * i) + 'px';
+        }
+    }
 
 
     var exBox = document.querySelector("#flex #ex");
@@ -148,7 +189,7 @@ function flexSetup() {
     valueHolder.style.height = valueHolder.getBoundingClientRect().height + 10 + 'px';
 
 
-    var flexUp = setInterval(function() {flexUpdate(flexUp)}, 50);
+    var flexUp = setInterval(function () { flexUpdate(flexUp) }, 50);
     // The first value-option represents the standard value and therfore has to be selected by default but only when it is well visible on the user's screen
 }
 
@@ -159,7 +200,10 @@ function flexUpdate(iv) {
     pos += vh;
 
     if (pos > vh / 2 && pos < vh) {
-        flexValueActivate(document.querySelector("#flex #settings .value button"));
+
+        setTimeout(function () {
+            flexValueActivate(document.querySelector("#flex #settings .value button"));
+        }, 750);
         clearInterval(iv);
     }
 }

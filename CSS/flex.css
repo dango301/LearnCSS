@@ -1,20 +1,25 @@
 #flex #menu {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 50px;
 }
 
 #flex #menu ul {
   list-style: none;
   margin: 0;
-  padding: 10px;
-  background: #2b2b2b;
+  padding: 0px;
 }
 
 #flex #menu ul li {
   position: relative;
+  background: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 17.5px;
+  font-weight: 600;
+  text-align: center;
 }
 
 #flex #grid {

@@ -72,7 +72,7 @@ function flexSetup() {
 
     var menuList = [];
     var lists = document.querySelectorAll("#flex #menu ul");
-    var maxListWidth = [0, 0, 0];
+    var maxListWidth = [0, 0];
 
     for (var l = 0; l < lists.length; l++) {
 
@@ -82,7 +82,8 @@ function flexSetup() {
         for (let i = 0; i < items.length; i++) {
             menuList[l][i] = items[i];
 
-            let cWidth = menuList[l][i].getBoundingClientRect().width * 2;
+            let cWidth = menuList[l][i].getBoundingClientRect().width;
+            // the smaller the item the bigger it should become
             maxListWidth[l] = cWidth > maxListWidth[l] ? cWidth : maxListWidth[l];
 
             if (l == 0) {
@@ -104,30 +105,32 @@ function flexSetup() {
         }
     }
 
-    var slant = 15;// [px]
+    var slant = 15; // [px]
     for (let l = 0; l < menuList.length; l++) {
 
-        var padding = slant + 10;
-        var maxSlantPercent = slant / (maxListWidth[l] + padding) * 100;
+        var paddingTotal = 100 + slant;
+        var newWidth = maxListWidth[l];
+        var maxSlantPercent = slant / (newWidth + paddingTotal) * 100;
 
         for (let i = 0; i < menuList[l].length; i++) {
 
-            menuList[l][i].style.width = maxListWidth[l] + 'px';
+            menuList[l][i].style.width = newWidth + 'px';
 
             menuList[l][i].style.clipPath = 'polygon(0 0, ' + (100 - maxSlantPercent) + '% 0, 100% 100%, ' + maxSlantPercent + '% 100%)';
 
-            menuList[l][i].style.padding = '7.5px ' + (padding / 2) + 'px';
+            menuList[l][i].style.padding = '7.5px ' + (paddingTotal / 2) + 'px';
             menuList[l][i].style.left = (l != 0) ? (slant * i - slant * l) + 'px' : (slant * i) + 'px';
         }
     }
 
 
     var exBox = document.querySelector("#flex #ex");
-    exBox.style.height = document.querySelector("#flex #desc").getBoundingClientRect().height * .0425 + 'px';
+    exBox.style.height = 'calc(60vh * .04)';/*document.querySelector("#flex #desc").getBoundingClientRect().height * .0425 + 'px';*/
     // 0.0425 is a hand-tested value to make the images as large as possible, while keeping the random multiplier in mind, so that no images could be  pushed into a third row
 
     var exBoxRect = exBox.getBoundingClientRect(),
         boxSize = exBoxRect.width * exBoxRect.height;
+        cl(exBoxRect.height);
 
     var pics = document.querySelectorAll("#flex img"),
         labels = document.querySelectorAll("#flex #ex  p");

@@ -6,6 +6,7 @@ var navHeads;
 var taskDad;
 var progressbar;
 var notiButton;
+var flexOptionHeads;
 
 window.onload = function () {
 
@@ -66,6 +67,11 @@ function eventsSetup() {
     taskDad = document.querySelector("aside#tasks");
     taskDad.addEventListener("mouseover", taskHover);
     taskDad.addEventListener("mouseleave", taskHoverOut); //USE THIS instead of mouseout; works for selected element only, not any children
+
+    flexOptionHeads = document.querySelectorAll("#flex #menu #first li");
+    flexOptionHeads.forEach(head => {
+        head.addEventListener("mouseover", changeFlexOptionsText);
+    });
 }
 
 
@@ -75,60 +81,7 @@ var colorOther = 'rgba(53, 255, 105, 1)';
 
 function flexSetup() {
 
-    var menuList = [];
-    var lists = document.querySelectorAll("#flex #menu ul");
-    var maxListWidth = [0, 0];
-
-    for (var l = 0; l < lists.length; l++) {
-
-        menuList[l] = [];
-        var items = lists[l].children;
-
-        for (let i = 0; i < items.length; i++) {
-            menuList[l][i] = items[i];
-
-            let cWidth = menuList[l][i].getBoundingClientRect().width;
-            // the smaller the item the bigger it should become
-            maxListWidth[l] = cWidth > maxListWidth[l] ? cWidth : maxListWidth[l];
-
-            if (l == 0) {
-
-                switch (i) {
-                    case 0:
-                        menuList[l][i].style.background = colorFlow;
-                        break;
-                    case 1:
-                        menuList[l][i].style.background = colorLayout;
-                        break;
-                    case 2:
-                        menuList[l][i].style.background = colorOther;
-                        break;
-                }
-
-            }
-
-        }
-    }
-
-    var slant = 15; // [px]
-    for (let l = 0; l < menuList.length; l++) {
-
-        var paddingTotal = 100 + slant;
-        var newWidth = maxListWidth[l];
-        var maxSlantPercent = slant / (newWidth + paddingTotal) * 100;
-
-        for (let i = 0; i < menuList[l].length; i++) {
-
-            menuList[l][i].style.width = newWidth + 'px';
-
-            menuList[l][i].style.clipPath = 'polygon(0 0, ' + (100 - maxSlantPercent) + '% 0, 100% 100%, ' + maxSlantPercent + '% 100%)';
-
-            menuList[l][i].style.padding = '7.5px ' + (paddingTotal / 2) + 'px';
-            menuList[l][i].style.left = (l != 0) ? (slant * i - slant * l) + 'px' : (slant * i) + 'px';
-        }
-    }
-
-
+    flexMenuChange(true);
 
     var exBox = document.querySelector("#flex #ex");
     exBox.style.height = 'calc(60vh * .04)';
@@ -136,7 +89,7 @@ function flexSetup() {
 
     var exBoxRect = exBox.getBoundingClientRect(),
         boxSize = exBoxRect.width * exBoxRect.height;
-        cl(exBoxRect.height);
+    cl(exBoxRect.height);
 
     var pics = document.querySelectorAll("#flex img"),
         labels = document.querySelectorAll("#flex #ex  p");
@@ -241,6 +194,88 @@ function flexValueActivate(caller) {
         cBorders[i].style.width = caller.getBoundingClientRect().width / 2 + 2 + 'px';
         cBorders[i].style.height = caller.getBoundingClientRect().height / 2 - 1 + 'px';
     }
+}
+
+
+var menuOptionText = {
+    headers: ['Flow', 'Layout', 'Size'],
+    content: [
+        ['Direction', 'Wrap', 'Order'],
+        ['Justify-Content / Align-Content', 'Justify-Items / Align-Items', 'Justify-Self / Align-Items'],
+        ['Flex-Shrink', 'Flex-Grow', 'Flex-Basis']
+    ]
+};
+
+function changeFlexOptionsText(c) {
+    var caller = c.srcElement;
+    var subDivs = document.querySelectorAll("#flex #menu #second li");
+
+    for (var i = 0; i < flexOptionHeads.length; i++) {
+
+        if (flexOptionHeads[i] == caller) {
+
+            for (let n = 0; n < subDivs.length; n++) {
+                subDivs[n].innerHTML = menuOptionText.content[i][n];
+            }
+            flexMenuChange();
+            break;
+        }
+    }
+
+}
+
+
+function flexMenuChange(setup = false) {
+
+    var l = setup ? 0 : 1;
+    var menuList = [];
+    var lists = document.querySelectorAll("#flex #menu ul");
+    var maxListWidth = [0, 0];
+
+    menuList[l] = [];
+    var items = lists[l].children;
+
+    for (let i = 0; i < items.length; i++) {
+        menuList[l][i] = items[i];
+
+        menuList[l][i].style.width = 'fit-content';
+        let cWidth = menuList[l][i].getBoundingClientRect().width;
+        maxListWidth[l] = cWidth > maxListWidth[l] ? cWidth : maxListWidth[l];
+
+        if (l == 0) {
+
+            switch (i) {
+                case 0:
+                    menuList[l][i].style.background = colorFlow;
+                    break;
+                case 1:
+                    menuList[l][i].style.background = colorLayout;
+                    break;
+                case 2:
+                    menuList[l][i].style.background = colorOther;
+                    break;
+            }
+
+        }
+
+    }
+
+    var slant = 15; // [px]
+
+    var paddingTotal = 100 + slant;
+    var newWidth = maxListWidth[l];
+    var maxSlantPercent = slant / (newWidth + paddingTotal) * 100;
+
+    for (let i = 0; i < menuList[l].length; i++) {
+
+        menuList[l][i].style.width = newWidth + 'px';
+
+        menuList[l][i].style.clipPath = 'polygon(0 0, ' + (100 - maxSlantPercent) + '% 0, 100% 100%, ' + maxSlantPercent + '% 100%)';
+
+        menuList[l][i].style.padding = '7.5px ' + (paddingTotal / 2) + 'px';
+        menuList[l][i].style.left = (l != 0) ? (slant * i - slant * l) + 'px' : (slant * i) + 'px';
+    }
+
 }
 
 /* #region Change Sliders */

@@ -43,6 +43,11 @@ function screenSetup() {
 
 }
 
+window.onresize = function (event) {
+    flexSetup(); //FIX THIS
+}
+
+
 function slidersSetup() {
 
     changeOpacity(.5);
@@ -64,11 +69,11 @@ function eventsSetup() {
 }
 
 
-function flexSetup() {
+var colorFlow = 'rgb(255, 47, 65)';
+var colorLayout = 'rgb(100, 85, 255)';
+var colorOther = 'rgba(53, 255, 105, 1)';
 
-    var colorFlow = 'rgb(255, 47, 65)';
-    var colorLayout = 'rgb(100, 85, 255)';
-    var colorOther = 'rgba(53, 255, 105, 1)';
+function flexSetup() {
 
     var menuList = [];
     var lists = document.querySelectorAll("#flex #menu ul");
@@ -124,9 +129,10 @@ function flexSetup() {
     }
 
 
+
     var exBox = document.querySelector("#flex #ex");
-    exBox.style.height = 'calc(60vh * .04)';/*document.querySelector("#flex #desc").getBoundingClientRect().height * .0425 + 'px';*/
-    // 0.0425 is a hand-tested value to make the images as large as possible, while keeping the random multiplier in mind, so that no images could be  pushed into a third row
+    exBox.style.height = 'calc(60vh * .04)';
+    // 0.0425 is a hand-tested value to make the images as large as possible, while keeping the random multiplier in mind, so that no image could be  pushed into another row
 
     var exBoxRect = exBox.getBoundingClientRect(),
         boxSize = exBoxRect.width * exBoxRect.height;

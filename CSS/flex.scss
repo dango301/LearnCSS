@@ -8,6 +8,10 @@
         margin-bottom: 50px;
 
 
+        #first {
+            z-index: 2;
+        }
+
         ul {
             list-style: none;
             margin: 0;
@@ -19,7 +23,17 @@
                 width: fit-content;
                 font-size: 17.5px;
                 font-weight: 600;
-                text-align: center;
+                text-align: left;
+                // white-space: nowrap;
+            }
+        }
+
+        @keyframes menuSlideAnim {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
             }
         }
     }

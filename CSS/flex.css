@@ -5,6 +5,10 @@
   margin-bottom: 50px;
 }
 
+#flex #menu #first {
+  z-index: 2;
+}
+
 #flex #menu ul {
   list-style: none;
   margin: 0;
@@ -19,7 +23,25 @@
   width: fit-content;
   font-size: 17.5px;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
+}
+
+@-webkit-keyframes menuSlideAnim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes menuSlideAnim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 #flex #grid {
